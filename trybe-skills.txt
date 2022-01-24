@@ -1,4 +1,0 @@
-- Unix
-- Bash
-- Git
-mais uma linha aleatória
