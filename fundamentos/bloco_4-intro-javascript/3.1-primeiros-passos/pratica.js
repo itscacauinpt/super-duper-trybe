@@ -222,13 +222,7 @@ else if (salarioFinal > 4664.68) {
     salarioFinal = salarioLiq - (salarioLiq * 27.5 / 100);
 }
 
-
 console.log(mensag + salarioFinal);
 
-
-
-
 //salario base = salarioBruto - salarioLiq
-
-
 //Salario descontado INSS e IR, ${}.
