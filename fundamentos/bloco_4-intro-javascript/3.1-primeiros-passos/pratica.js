@@ -159,6 +159,76 @@ if (one % 2 !== 0 || two % 2 !== 0 || three % 2 !== 0) {
     console.log('false');
 }
 
+/**Questão dez
+ * Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
+ */
+
+const custoProduto = 10;
+const custoVendaProduto = 20;
+//let produtosVendidos = 1000;
+let lucro = custoVendaProduto - custoProduto;
+let custoTotal = lucro * 1000;
+
+
+//valor de entrada for for menor que zero
+if (custoProduto >= 0 && custoVendaProduto >= 0) {
+    custoTotal = lucro * 1000;
+    console.log(custoTotal);
+
+
+} else {
+    console.log('Error, valor de entrada inválido.')
+}
+
+
+//Questão onze
+//Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
+
+let salarioBruto = 3500.00;
+let salarioLiq = '';
+let salarioFinal = '';
+let mensag = 'Salario com descontos de INSS e IR: R$';
+
+if (salarioBruto <= 1556.94) {
+    salarioLiq = salarioBruto - (salarioBruto * 8 / 100);
+    //mensag = 'INSS aliquota 8%, resultando '
+}
+else if (salarioBruto >= 1556.94 && salarioBruto <= 2594.92) {
+    salarioLiq = salarioBruto - (salarioBruto  * 9 / 100);
+    //mensag = 'INSS aliquota 9%, resultando '
+}
+else if (salarioBruto >= 2594.93 && salarioBruto <= 5189.82) {
+    salarioLiq = salarioBruto - (salarioBruto  * 11 / 100);
+    //mensag = 'INSS aliquota 11%, resultando '
+}
+else if (salarioBruto > 5189.82) {
+    salarioLiq = salarioBruto - ( inss >= 570.88);
+    //mensag = 'INSS de no máximo R$570,88'
+}
+
+if (salarioLiq <= 1903.98) {
+    salarioFinal = salarioLiq;
+}
+else if (salarioLiq >= 1903.99 && salarioLiq <= 2826.65) {
+    salarioFinal = salarioLiq - (salarioLiq * 7.5 / 100);
+}
+else if (salarioLiq >= 2826.66 && salarioLiq <= 3751.05) {
+    salarioFinal = salarioLiq - (salarioLiq * 15 / 100);
+}
+else if (salarioLiq >= 3751.06 && salarioLiq <= 4664.68) {
+    salarioFinal = salarioLiq - (salarioLiq * 22.5 / 100);
+}
+else if (salarioFinal > 4664.68) {
+    salarioFinal = salarioLiq - (salarioLiq * 27.5 / 100);
+}
+
+
+console.log(mensag + salarioFinal);
 
 
 
+
+//salario base = salarioBruto - salarioLiq
+
+
+//Salario descontado INSS e IR, ${}.
