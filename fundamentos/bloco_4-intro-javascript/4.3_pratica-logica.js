@@ -24,4 +24,34 @@ for (let i = 0; i < word.length; i+=1){
 } 
  console.log(reversed);
 
+/**
+ * 3- Escreva dois algoritmos: um que retorne a maior palavra deste array e outro que retorne a menor. Considere o número de caracteres de cada palavra.
+ */
+
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+
+//console.log(array[0])
+let maiorPalavra = array[0];
+let menorPalavra = array[0];
+
+for (i = 0; i < array.length; i+=1) {
+    if (array[i].length > maiorPalavra.length) {
+        maiorPalavra = array[i];
+    }
+}
+
+for (i = 0; i < array.length; i+=1) {
+    if (array[i].length < menorPalavra.length) {
+        menorPalavra = array[i];
+    }
+}
+
+console.log(maiorPalavra);
+console.log(menorPalavra);
+
+/**
+ *4-  Um número primo é aquele divisível apenas por 1 e por ele mesmo. Sabendo disso, escreva um algoritmo que retorne o maior número primo entre 0 e 50.
+ */
+
+
 
