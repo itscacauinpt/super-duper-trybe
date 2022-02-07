@@ -51,7 +51,33 @@ console.log(menorPalavra);
 
 /**
  *4-  Um número primo é aquele divisível apenas por 1 e por ele mesmo. Sabendo disso, escreva um algoritmo que retorne o maior número primo entre 0 e 50.
+
+ 1. achar o maior numero primo entre 0 e 50
+    antes eu preciso saber quem são os pares e os primos.
+    a. que numeros?
+        mostrar numeros de 0 a 50.
+    b. o que são numeros primos?
+        são numeros divisiveis apenas por 1 e por ele mesmo.
+    c. o que são numeros pares?
+        numeros que divididos por dois resta zero, numeros que dividem mais de duas vezes.
+*/
+
+let maiorPrimo = 0;
+
+for (let numero = 0; numero <= 50; numero+=1) {
+    let primo = true;
+    for (tabuada = 2; tabuada < numero; tabuada +=1) {
+        if (numero%tabuada===0) {
+            primo = false;
+        }
+    }
+    if (primo) {
+        maiorPrimo = numero;
+    }
+}
+console.log(maiorPrimo);
+
+/**
+ * Bônus
+1- Agora vamos trabalhar com algumas formas geométricas! Faça um programa que, dado um valor n qualquer, seja n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
  */
-
-
-
