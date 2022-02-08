@@ -81,3 +81,76 @@ console.log(maiorPrimo);
  * Bônus
 1- Agora vamos trabalhar com algumas formas geométricas! Faça um programa que, dado um valor n qualquer, seja n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
  */
+
+let n = 5;
+let imprima = '*';
+let forma = '';
+
+/*
+for (i = 0; i < n; i +=1) {
+    forma += imprima;
+    console.log(forma)
+}
+*/
+for (i = 0; i < n; i +=1) {
+    forma += imprima;
+}
+for (imprimi = 0; imprimi < n; imprimi +=1){
+    console.log(forma)
+}
+
+/**
+ * 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base.
+ */
+
+let n2 = 5;
+let imprima2 = '*';
+let forma2 = '';
+
+for (i = 0; i < n2; i +=1) {
+    forma2 += imprima2;
+    console.log(forma2);
+}
+
+/**
+ * 3- Agora inverta o lado do triângulo.
+ */
+
+let n3 = 5;
+let imprima3 = '*';
+let forma3 = ' ';
+let posicao = n;
+
+for (let i=0; i < n; i+=1) {
+    for (let iColuna=0; iColuna <= n; iColuna+=1) {
+        if (iColuna < posicao) {
+            forma3 += ' '; 
+        } else {
+            forma3 += imprima3;
+        }
+    }
+    console.log(forma3);
+    forma3 = ' ';
+    posicao -=1;
+}
+//
+
+/**
+ * Exercícios seis
+ */
+
+let num = 31;
+let divisors = 1;
+
+for (let number = 2; number <= num; number +=1) {
+    if (num%number===0) {
+        divisors += 1;
+    }
+    if (divisors===2) {
+        console.log(num + ' é primo.');
+    
+    } else {
+        console.log(num + ' não é primo.');
+    }
+}
+
