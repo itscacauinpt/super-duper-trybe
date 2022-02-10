@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p class="todosP" id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p class="todosP" id="second-paragraph">Segundo parágrafo!</p>
+      <p class="todosP" id="explica" >'document . get Element By Class Name ( 'nome da classe') colchetes [ numero da 'array' ]</p>
+      <p class="todosP" id="explica2" >'document.getElementsByClassName('todosP')[2].style.backgroundColor = 'purple';'</p>
+      <p class="todosP" >'document.getElementsByClassName('todosP').explica2.style.backgroundColor = 'purple';'</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+      paragraph.style.backgroundColor = 'violet';
+
+      const paragrafosColoridos = document.getElementsByClassName('todosP')[2].style.backgroundColor = 'purple';
+
+      //todosP[2].style.backgroundColor = 'purple';
+
+      const pageTitle = document.getElementById('page-title').innerText = 'Título alterado! YAY';
+
+      const secondParagraph = document.getElementById('second-paragraph').innerText = 'Segundo parágrafo modificado também, porque isso aqui é muito divertido, mas to com medo do que eu vou ter que fazer com isso aqui, socorro!'
+
+      const subtitle = document.getElementById('subtitle').innerText = 'subtítulo alterado, é nóix';
+
+      
+    </script>
+  </body>
+</html>

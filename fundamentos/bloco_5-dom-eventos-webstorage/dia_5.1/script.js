@@ -1,0 +1,1 @@
+//querySelector seu lindo u.u
