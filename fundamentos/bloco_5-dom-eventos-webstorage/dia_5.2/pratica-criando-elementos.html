@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador do Tempo</title>
+
+    <style>
+    * {
+    margin: 0;
+  }
+
+  body {
+      background-color: antiquewhite;
+  }
+  
+  #container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+  
+  #header-container {
+    color: white;
+    padding: 20px;
+    background-color: rgb(0, 176, 105);
+  }
+
+  .lista {
+    color: black;
+  }
+  
+  .emergency-tasks {
+    display: inline-block;
+    height: 400px;
+    margin: 65px 0;
+    width: 400px;
+    background-color: rgb(255, 159, 132);
+  }
+  
+  .emergency-tasks div {
+    height: 198px;
+  }
+  .emergency-tasks h3 {
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(165, 0, 243);
+  }
+  
+  .no-emergency-tasks {
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(207, 183, 83);
+  }
+  
+  .no-emergency-tasks div {
+    height: 198px;
+  }
+  
+  .no-emergency-tasks h3 {
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(35, 37, 37);
+  }
+
+  #footer-container {
+    color: white;
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(0, 53, 51);
+  }    
+    </style>
+
+  </head>
+  <body id="container">
+    <header id="header-container">
+      <h1>Administrador do Tempo da Trybe</h1>
+    </header>
+
+    <section id="sectionFather">
+      <section class="emergency-tasks">
+        <div>
+          <h3>Urgente e Importante</h3>
+          <ol class="listOne">
+          </ol>
+        </div>
+        <div>
+          <h3>Urgente e Não-Importante</h3>
+          <ol class="lista">
+          </ol>
+        </div>
+      </section>
+
+      <section class="no-emergency-tasks">
+        <div>
+          <h3>Não-Urgente e Importante</h3>
+          <ol class="lista">
+          </ol>
+        </div>
+        <div>
+          <h3>Não-Urgente e Não-Importante</h3>
+          <ol class="lista">
+          </ol>
+        </div>
+      </section>
+    </section>
+
+    <footer id="footer-container">
+      <div>&copy; Trybe</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
