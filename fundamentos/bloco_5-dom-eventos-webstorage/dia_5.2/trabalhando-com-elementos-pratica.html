@@ -59,47 +59,75 @@
     <script>
       // COLOQUE SEU CÓDIGO AQUI
       let body = document.getElementsByTagName('body')[0];
-
+      
       let agaUm = document.createElement('h1');
+      body.appendChild(agaUm);
 
       let main = document.createElement('main');
-
-      let sectionCenter = document.createElement('section');
-
-      let p = document.createElement('p');
-
-      let sectionLeft = document.createElement('section');
-
-      let sectionRight = document.createElement('section');
-
-      let img = document.createElement('img');
-
-      let liOl = document.createElement('ul');
-
-
-
-
-      body.appendChild(agaUm);
-      
       body.appendChild(main);
       main.className = 'main-content';
 
+      let sectionCenter = document.createElement('section');
       main.appendChild(sectionCenter);
       sectionCenter.className = 'center-content';
 
+      let p = document.createElement('p');
       sectionCenter.appendChild(p);
       p.innerHTML = 'Colocando algum texto, criatividade, a gente vê por aqui';
 
+      let sectionLeft = document.createElement('section');
       sectionLeft.className = 'left-content';
       main.appendChild(sectionLeft);
 
+      let sectionRight = document.createElement('section');
       sectionRight.className = 'right-content';
       main.appendChild(sectionRight);
 
+      let img = document.createElement('img');
       img.src = 'https://picsum.photos/200';
       img.className = 'small-image';
       sectionLeft.appendChild(img);
 
+      //8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. 
+      //Essa lista deve ser filha do section criado no passo 6;
+      let listUl = document.createElement('ul');
+      sectionRight.appendChild(listUl);
+      let li = document.createElement('li');
+      let listOfNumbers = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+
+
+      for (let i = 0; i < listOfNumbers.length; i += 1) {
+        let li = document.createElement('li');
+        let listItem = listOfNumbers[i];
+        li.innerText = listItem;
+        listUl.appendChild(li);
+      }
+
+
+      //9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+      for (let i = 1; i <= 3; i += 1) {
+        let tagAgaTres = document.createElement('h3');
+        tagAgaTres.innerText = i;
+        main.appendChild(tagAgaTres);
+      }
+
+      //alterações e remoções:
+      //agaUm.className = 'title';
+
+      //main.removeChild(sectionLeft);
+
+      //sectionRight.style.marginRight = 'auto';
+
+      //sectionCenter.style.backgroundColor = 'green';
+      
+      //remova os dois ultimos elementos da lista
+
+
+      //esquece esse pelo amor
+      /*
+            liUl.lastChild.remove();
+      liUl.lastChild.remove();
+            let liOl = document.createElement('ul');
       let li = document.createElement('li');
       liUl.appendChild(li);
 
@@ -117,24 +145,6 @@
         tagAgaTres.innerHTML = 'Show ' + index;
         main.appendChild(tagAgaTres);
       }*/
-
-      for (let i = 0; i <= 3; i += 1) {
-        let tagAgaTres = document.createElement('h3');
-        tagAgaTres.innerText = i;
-        main.appendChild(tagAgaTres);
-      }
-
-      agaUm.className = 'title';
-
-      main.removeChild(sectionLeft);
-
-      sectionRight.style.marginRight = 'auto';
-
-      sectionCenter.style.backgroundColor = 'green';
-      
-      //remova os dois ultimos elementos da lista
-      liUl.lastChild.remove();
-      liUl.lastChild.remove();
       
     </script>
   </body>
