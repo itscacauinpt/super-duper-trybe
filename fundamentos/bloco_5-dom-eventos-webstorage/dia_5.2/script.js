@@ -1,3 +1,14 @@
+document.getElementById('header-container').firstElementChild.innerText;
+document.getElementById('header-container').previousElementSibling.innerText
+document.getElementById('header-cpntainer').firstElementChild.remove()
+
+document.createElement('h2');
+document.getElementById('header-container').appendChild(document.createElement('h2'));
+
+
+
+//
+
 let toDo = [
     'varrer a casa',
     'arrumar quarto',
@@ -45,5 +56,45 @@ newSectionH3.innerHTML = 'Outras tarefas?';
 //adicionar estilo nessa nova section
 newSection.style.height = '190px';
 newSectionH3.style.backgroundColor = 'yellow';
+
+//adicionando paragrafos no section
+
+//editar esse para
+
+let text = [
+    'paragrafo alet=atorio yay', 
+    'paragrafo alet=atorio yay parte dois',
+    'paragrafo alet=atorio yay parte tres o retorno',
+    'paragrafo alet=atorio yay parte quatro editada por Mim',
+    'paragrafo alet=atorio yay parte final a volta',
+];
+
+function createParagraph (text) {
+    let para = document.createElement('p');
+    newSection.appendChild(para);
+    para.innerHTML = text;
+
+}
+
+/**
+ * 
+    for (i = 0; i < text.length; i +=1) {
+        let textPara = text[i];
+
+    }
+ */
+
+ createParagraph(text[0]);
+ createParagraph(text[1]);
+ createParagraph(text[2]);
+ createParagraph(text[3]); // o que eu to fazendo aqui senhor? :v
+ createParagraph(text[4]);
+// createParagraph('paragrafo alet=atorio yay parte dois');
+// createParagraph('paragrafo alet=atorio yay parte tres o retorno');
+// createParagraph('paragrafo alet=atorio yay parte final a volta');
+
+//removeChild()
+
+
 
 
