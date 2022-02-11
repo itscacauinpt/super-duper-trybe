@@ -103,48 +103,26 @@
         listUl.appendChild(li);
       }
 
-
       //9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
       for (let i = 1; i <= 3; i += 1) {
         let tagAgaTres = document.createElement('h3');
-        tagAgaTres.innerText = i;
+        tagAgaTres.innerText = 'Conteúdo ' + i;
         main.appendChild(tagAgaTres);
       }
 
       //alterações e remoções:
-      //agaUm.className = 'title';
+      agaUm.className = 'title';
 
-      //main.removeChild(sectionLeft);
+      main.removeChild(sectionLeft);
 
-      //sectionRight.style.marginRight = 'auto';
+      sectionRight.style.marginRight = 'auto';
 
-      //sectionCenter.style.backgroundColor = 'green';
+      sectionCenter.style.backgroundColor = 'green';
       
       //remova os dois ultimos elementos da lista
 
-
-      //esquece esse pelo amor
-      /*
-            liUl.lastChild.remove();
-      liUl.lastChild.remove();
-            let liOl = document.createElement('ul');
-      let li = document.createElement('li');
-      liUl.appendChild(li);
-
-      let listOfNumbers = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
-      for (let key of listOfNumbers) {
-        li.innerText = listOfNumbers[key];
-        //let item = lista[i];
-        //li.innerText = item;
-        li.appendChild(listOfNumbers);
-
-      }
-     /*
-      for (let i = 1; i <= 3; i += 1) {
-        //let tagAgaTres = document.createElement('h3');
-        tagAgaTres.innerHTML = 'Show ' + index;
-        main.appendChild(tagAgaTres);
-      }*/
+      listUl.lastChild.remove();
+      listUl.lastChild.remove();
       
     </script>
   </body>
