@@ -13,6 +13,9 @@ const myWebpage = document.getElementById('my-spotrybefy');
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
 firstLi.addEventListener('click', whenClicked);
+secondLi.addEventListener('click', whenClicked);
+thirdLi.addEventListener('click', whenClicked);
+
 
 function whenClicked () {
   secondLi.className = 'tech';
@@ -25,25 +28,37 @@ function whenClicked () {
 // com a classe 'tech';
 
 input.addEventListener('keyup', whenDigit);
-input.addEventListener('change', whenTyped);
 
 function whenDigit () {
-  firstLi.innerText = '';
-  //input.innerText = firstLi.innerText;
-  //console.log('digitei')
-}
-function whenTyped() {
-  firstLi.innerText = input.innerText;
-  //console.log(firstLi.innerText = input.innerText);
-  //console.log('digitei')
+ firstLi.innerText = input.value;//isso foi muita sorte, meu deus
 }
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
 
+let link = document.createElement('a');
+myWebpage.appendChild(link);
+link.href = 'https://itscacauinpt.github.io/';
+
+myWebpage.addEventListener('dblclick', redirecting);
+
+function redirecting () {
+  window.open(link)//eu to ficando boa em advinhar u.u
+  //console.log(link)
+
+}
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+
+myWebpage.addEventListener('mouseover', changeColor);
+
+function changeColor () {
+  let randomColor = Math.floor(Math.random()*16777215).toString(16);//achei, mas não entendi como funciona, alguém me explica o '16777215'?
+  myWebpage.style.color = '#' + randomColor;
+  //myWebpage.style.color = 'red';
+}
 
 // Segue abaixo um exemplo do uso de event.target:
 
