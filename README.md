@@ -26,7 +26,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [x] 3-3: _HTML & CSS - Seletores e posicionamento_
 - [x] 3-4: _HTML SemÃ¢ntico_
-- [x] 3-5: _[Projeto - HTML & CSS](https://github.com/tryber/sd-020-b-project-lessons-learned/pull/85)_
+- [x] 3-5: _[Projeto - HTML & CSS](https://github.com/tryber/sd-020-b-project-lessons-learned/pull/85/files_
 
 ##### Bloco 4: Introdução - JavaScript
 
@@ -34,7 +34,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 4-2: _JavaScript - Array e loop For_
 - [x] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [x] 4-4: _JavaScript - Objetos e funcões_
-- [x] 4-5: _[Projeto - Playground Functions]()_
+- [x] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-020-b-project-playground-functions/pull/85/files)_
 
 ##### Bloco 5: IntroduÃ§Ã£o - JavaScript - Projetos
 
