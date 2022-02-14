@@ -188,8 +188,17 @@ function creatingFridayButton (theDay) {
         evento.target.className = 'task';
       }
     })
-  };
-  colorDescription('green');
 
+    daysMonth.addEventListener('click', function (evento){
+      let theColor = 'rgb(119,119,119)';
+      if (evento.target.style.color !== cor){
+        evento.target.style.color = cor;
+      } else {
+        evento.target.style.color = theColor;
+      }
+    });
+  };
+  colorDescription('orange');
 
   
+
