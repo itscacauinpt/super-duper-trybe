@@ -164,10 +164,20 @@ function creatingFridayButton (theDay) {
    * com a tag span contendo a tarefa.
    */
 
+   const myTasks = document.querySelector('.my-tasks');
+
   function addToDo (toDo) {
-    const myTasks = document.querySelector('.my-tasks');
     let addSpan = document.createElement('span');
     addSpan.innerText = toDo;
     myTasks.appendChild(addSpan);
   };
   addToDo('Cozinhar');
+
+  function colorDescription (cor) {
+    let theColor = document.querySelector('div');
+    theColor.style.backgroundColor = cor;
+    theColor.className = 'tasks';
+    theColor.innerHTML = '';
+    myTasks.appendChild(theColor);
+  }
+  colorDescription('orange');
