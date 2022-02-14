@@ -15,11 +15,12 @@ function createDaysOfTheWeek() {
   
   // Escreva seu código abaixo.
 
-  
-function createDaysOfTheMonth() {
-    const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-    const daysMonth = document.querySelector('#days')
+  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+  const daysMonth = document.querySelector('#days');
+  const daysMonthChildren = document.querySelector('#days').children;
+  const buttonContainer = document.querySelector('.buttons-container');
 
+function createDaysOfTheMonth() {
     for (let i = 0; i < dezDaysList.length; i += 1) {
         const day = dezDaysList[i];
         const daysMonthList = document.createElement('li');
@@ -28,16 +29,141 @@ function createDaysOfTheMonth() {
         daysMonth.appendChild(daysMonthList);
 
         daysMonthList.className = 'day';
-
-        }
-
+        
     };
-//};
-
+};
   createDaysOfTheMonth();
 
+function creatingHolidays () {
+  for (let i = 0; i <= daysMonthChildren.length; i += 1) {
+    let holidays = daysMonthChildren[i];
 
-/**
- *         for (let ind = 0; ind < daysMonthList; ind += 1) {
-            const eachDay = daysMonthList[ind];
- */
+    if (holidays === daysMonthChildren[25]) {
+      holidays.className = 'day holiday';
+      //console.log(holidays)
+
+    }
+    if (holidays === daysMonthChildren[26]) {
+      holidays.className = 'day holiday';
+      //console.log(holidays)
+
+      }
+    if (holidays === daysMonthChildren[32]) {
+      holidays.className = 'day holiday';
+      //console.log(holidays)
+    }
+
+  }
+
+}
+  creatingHolidays();
+
+
+function addFridayClass () {
+  for (let i = 0; i < daysMonthChildren.length; i +=1) {
+    let theDays = daysMonthChildren[i];
+    if (theDays === daysMonthChildren[5]) {
+      theDays.className = 'day friday';
+      //console.log(theDays);
+
+    }
+    else if (theDays === daysMonthChildren[12]) {
+      theDays.className = 'day friday';
+      //console.log(theDays);
+
+    }
+    else if (theDays === daysMonthChildren[19]) {
+      theDays.className = 'day friday';
+      //console.log(theDays);
+
+    }
+    else if (theDays === daysMonthChildren[26]) {
+      theDays.className = 'day holiday friday';
+      //console.log(theDays);
+
+    };
+
+  };
+ 
+};
+  addFridayClass();
+
+function creatingFeriadosButton () {
+  const feriadosButton = document.createElement('button');
+  feriadosButton.innerHTML = 'Feriados';
+  feriadosButton.className = 'btn-holiday';
+
+  buttonContainer.appendChild(feriadosButton);
+
+  feriadosButton.addEventListener('click', function () {
+    const feriadoDays = document.querySelectorAll('.holiday');
+    const feriadosButton = document.createElement('button');
+    const feriadosColor = 'rgb(238,238,238)';
+  
+    for (let i = 0; i < feriadoDays.length; i +=1) {
+      if (feriadoDays[i].style.backgroundColor != 'yellow') {
+        feriadoDays[i].style.backgroundColor = 'yellow';
+  
+      } else {
+        feriadoDays[i].style.backgroundColor = feriadosColor;
+  
+      };
+    };
+  });
+};
+  creatingFeriadosButton();
+
+
+function creatingFridayButton () {
+  const sextaButton = document.createElement('button');
+  sextaButton.id = 'btn-friday';
+  sextaButton.innerHTML = 'Sexta-feira';
+
+  buttonContainer.appendChild(sextaButton);
+
+  sextaButton.addEventListener('click', function () {
+    const friDays = document.querySelectorAll('.friday');
+    let fridayText = 'Sexta o/';
+    let friDaysArray = [4, 11, 18, 25];
+
+    for (let i = 0; i < friDays.length; i += 1) {
+      if (friDays[i].innerText !== fridayText) {
+        friDays[i].innerText = fridayText;
+      } else {
+        friDays[i].innerText = friDaysArray[i];
+      }
+    };
+  });
+};
+  creatingFridayButton();
+
+  
+  function zoomIn () {
+    let days = document.querySelector('#days');
+    days.addEventListener('mouseover', function (event) {
+      event.target.style.fontSize = '25px';
+      event.target.style.color = 'green';
+
+    }); 
+    //console.log('passou por cima')
+
+  };
+  
+  function zoomOut () {
+    let days = document.querySelector('#days');
+
+    days.addEventListener('mouseout', function (event) {
+      event.target.style.fontSize = '20px';
+      event.target.style.color = 'gray';
+
+
+    }); 
+    //console.log('saiu de cima')
+
+  };
+  zoomIn();
+  zoomOut();
+
+  function addSpan () {
+
+  };
