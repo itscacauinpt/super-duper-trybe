@@ -174,10 +174,22 @@ function creatingFridayButton (theDay) {
   addToDo('Cozinhar');
 
   function colorDescription (cor) {
-    let theColor = document.querySelector('div');
-    theColor.style.backgroundColor = cor;
-    theColor.className = 'tasks';
-    theColor.innerHTML = '';
-    myTasks.appendChild(theColor);
-  }
-  colorDescription('orange');
+    let selected = document.querySelector('div');
+    selected.style.backgroundColor = cor;
+    selected.className = 'task';
+    selected.innerHTML = '';
+    myTasks.appendChild(selected);
+
+    selected.addEventListener('click', function (evento) {
+      if (evento.target.className !== 'task selected') {
+        evento.target.className = 'task selected';
+      //console.log('cliquei');
+      } else {
+        evento.target.className = 'task';
+      }
+    })
+  };
+  colorDescription('green');
+
+
+  
