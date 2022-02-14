@@ -114,10 +114,10 @@ function creatingFeriadosButton () {
   creatingFeriadosButton();
 
 
-function creatingFridayButton () {
+function creatingFridayButton (theDay) {
   const sextaButton = document.createElement('button');
   sextaButton.id = 'btn-friday';
-  sextaButton.innerHTML = 'Sexta-feira';
+  sextaButton.innerHTML = theDay;
 
   buttonContainer.appendChild(sextaButton);
 
@@ -135,7 +135,7 @@ function creatingFridayButton () {
     };
   });
 };
-  creatingFridayButton();
+  creatingFridayButton('Sexta-feira');
 
   
   function zoomIn () {
@@ -143,10 +143,8 @@ function creatingFridayButton () {
     days.addEventListener('mouseover', function (event) {
       event.target.style.fontSize = '25px';
       event.target.style.color = 'green';
-
     }); 
     //console.log('passou por cima')
-
   };
   
   function zoomOut () {
@@ -155,15 +153,21 @@ function creatingFridayButton () {
     days.addEventListener('mouseout', function (event) {
       event.target.style.fontSize = '20px';
       event.target.style.color = 'gray';
-
-
     }); 
     //console.log('saiu de cima')
-
   };
   zoomIn();
   zoomOut();
 
-  function addSpan () {
+  /**implemente uma função que adiciona um atarefa personalizada ao calendário.
+   * A função deve receber como parâmetro a string com o nome da tarefa e criar inamicamente um elemento
+   * com a tag span contendo a tarefa.
+   */
 
+  function addToDo (toDo) {
+    const myTasks = document.querySelector('.my-tasks');
+    let addSpan = document.createElement('span');
+    addSpan.innerText = toDo;
+    myTasks.appendChild(addSpan);
   };
+  addToDo('Cozinhar');
