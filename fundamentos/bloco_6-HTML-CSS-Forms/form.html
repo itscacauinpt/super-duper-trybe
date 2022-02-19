@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form de Evento</title>
+  <link rel="stylesheet" href="./style-form.css">
+</head>
+<body>
+  <h1>Evento Open da Cacau quando se formar na Trybe</h1>
+  <main>
+    <div class="form-box">
+      <form action="" method="get">
+        
+          <label for="name-usr"> Nome:
+            <input type="text" id="name-usr" placeholder="Nome Completo" class="usrInput" required>
+          </label>
+          <br>
+          <label for="email-usr"> Email:
+            <input type="email" id="email-usr" placeholder="Seu melhor email" required>
+          </label>
+
+          <br>
+
+          <label for="op-one">
+              <input type="radio" id="op-one" value="opOne" name="opcao" required> Opção 1
+          </label>
+
+          <label for="op-two">
+              <input type="radio" id="op-two" value="opTwo" name="opcao" required> Opção 2
+          </label>
+
+          <label for="op-three">
+            <input type="radio" id="op-three" value="opThree" name="opcao" required> Opção 3
+          </label>
+
+          <label for="op-four">
+            <input type="radio" id="op-four" value="opFour" name="opcao" required> Opção 4
+          </label>
+          
+          <br>
+
+          <label for="textarea">
+            <p>Espaço para digitar a resposta:</p>
+            <textarea id="textarea"></textarea>
+          </label>
+
+          <br>
+          <label for="the-date"> Data:
+            <input type="date" id="the-date">
+          </label>
+          <br>
+          <label for="agreedFormOne"> Concordo em ir fantasiado:
+            <input type="checkbox" id="agreedFormOne">
+          </label>
+          <br>
+          <label for="agreedFormTwo"> Concordo em levar presente:
+            <input type="checkbox" id="agreedFormTwo">
+          </label>
+
+      </form>
+    </div>
+      <button type="submit" id="submit-btn">Confirmar Presença</button>
+      <button type="reset" id="clean-btn">Apagar</button>
+  </main>
+  <script src="./script-form.js"></script>
+</body>
+</html>
