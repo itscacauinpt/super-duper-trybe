@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Align Items</title>
+    <style>
+      .container {
+        margin-bottom: 60px;
+      }
+
+      .box-one {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 70px;
+        min-height: 80px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-two {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        min-height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-three {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 30px;
+        margin: 10px 5px;
+        min-height: 50px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-container {
+        background-color: #0fa36b;
+        display: flex;
+        /* ADICIONE AQUI SEUS TESTES */
+
+        align-items: center;
+      }
+
+      .box-container-one {
+        background-color: #0fa36b;
+        display: flex;
+        /* ADICIONE AQUI SEUS TESTES */
+
+        align-items:baseline;
+      }
+
+      .box-container-two {
+        background-color: #0fa36b;
+        display: flex;
+        /* ADICIONE AQUI SEUS TESTES */
+
+        align-items:flex-end;
+      }
+
+      .box-container-three {
+        background-color: #0fa36b;
+        display: flex;
+        /* ADICIONE AQUI SEUS TESTES */
+
+        align-items:flex-start;
+      }
+
+      .box-container-four {
+        background-color: #0fa36b;
+        display: flex;
+        /* ADICIONE AQUI SEUS TESTES */
+
+        align-items: stretch;
+      }
+    </style>
+
+  </head>
+  <body>
+    <section class="container">
+      <p>center:</p>
+      <div class="box-container">
+        <div class="box-one">1</div>
+        <div class="box-two">2</div>
+        <div class="box-three">3</div>
+      </div>
+    </section>
+    <section class="container">
+      <p>baseline:</p>
+      <div class="box-container-one">
+        <div class="box-one">1</div>
+        <div class="box-two">2</div>
+        <div class="box-three">3</div>
+      </div>
+    </section>
+    <section class="container">
+      <p>flex-end:</p>
+      <div class="box-container-two">
+        <div class="box-one">1</div>
+        <div class="box-two">2</div>
+        <div class="box-three">3</div>
+      </div>
+    </section>
+    <section class="container">
+      <p>flex-start:</p>
+      <div class="box-container-three">
+        <div class="box-one">1</div>
+        <div class="box-two">2</div>
+        <div class="box-three">3</div>
+      </div>
+    </section>
+    <section class="container">
+      <p>stretch:</p>
+      <div class="box-container-four">
+        <div class="box-one">1</div>
+        <div class="box-two">2</div>
+        <div class="box-three">3</div>
+      </div>
+    </section>
+
+    <div>
+      <p>2 - Teste as possibilidades ( center , flex-start , flex-end , stretch e baseline ) para a propriedade align-items . Não se esqueça de copiar o código abaixo! 😉
+      </p>
+    </div>
+  </body>
+</html>
