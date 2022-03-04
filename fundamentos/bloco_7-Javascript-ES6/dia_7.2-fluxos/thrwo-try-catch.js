@@ -1,4 +1,4 @@
-//Exemplo de arrow function:
+//Exemplo de arrow function ->
 const sum = (value1, value2) => value1 + value2;
 //console.log(sum(2, 2));
 //console.log(sum(2, '3')); //QUE?
