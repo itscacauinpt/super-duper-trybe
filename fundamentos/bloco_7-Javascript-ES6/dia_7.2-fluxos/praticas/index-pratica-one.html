@@ -22,38 +22,42 @@
   <script>
     //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN
     /*
-    function sum() {
-      const value1 = document.getElementById('value1').value;
-      const value2 = document.getElementById('value2').value;
-
-      if(value1 === Number || value2 === Number) {
-        try {
-          const result = parseInt(value1) + parseInt(value2);
-          document.getElementById('result').innerHTML = `Resultado: ${result}`;
-        } catch {
-          throw new Error('Não deu, use números mozão, vlw flw');
-          document.getElementById('result').innerHTML = `Erro: ${error.message}`;
-        } finally {
-          document.getElementById('value1').value = '';
-          document.getElementById('value2').value = '';
-        }
-      }
-    }
-          if(typeof value1 !== Number || typeof value2 !== Number) {
-        throw new Error('Não dá para somar letras numa calculadora, use números mozão, vlw flw');
-      } 
-            if(typeof value1 !== 'number' || typeof value2 !== 'number') {
-        throw new Error('Preciso de dois números, okay? u.u');
-      }
-      (!value1 || !value2)
+      (isNaN(value1) || isNaN(value2))
+      (typeof value1 !== 'number' || typeof value2 !== 'number')
+      (typeof value1 !== Number || typeof value2 !== Number)
     */
 
+    function sum() {
+      try {
+            const value1 = document.getElementById('value1').value;
+            const value2 = document.getElementById('value2').value;
+            verifyNumbers(value1, value2);
+            const result = parseInt(value1) + parseInt(value2);
+            document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      } catch (error) {
+            document.getElementById('result').innerHTML = error.message;
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+    }
+
+    const verifyNumbers = (value1, value2) => {
+        if (value1 === '' || value2 === '') {
+            throw new Error(`Por favor, insira valores nos 2 campos.`)
+        }
+
+        if (typeof value1 !== Number || typeof value2 !== Number) {
+            throw new Error(`O valor inserido não é um número, por favor tente valores numéricos.`)
+        }
+    }
+    //
     function verifyingTheNumber(value1, value2) {
-      if(!value1 || !value2) {
+      if(value1 === '' || value2 === '') {
         throw new Error('Preciso de dois números, okay? u.u');
       }
       if(isNaN(value1) || isNaN(value2)) {
-        throw new Error('Não dá para somar letras numa calculadora, use números mozão, vlw flw')
+        throw new Error('Não dá para somar letras numa calculadora, use números, vlw flw')
       }
     }
 
