@@ -5,9 +5,14 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Calculadora</title>
+  <style>
+    mark {
+      background-color: violet;
+    }
+  </style>
 </head>
 <body>
-  <p>Informe dois números para realizar a soma:</p>
+  <p>Informe <mark>dois números</mark> para realizar a soma:</p>
   <label for='value1'>Valor 1:</label>
   <input type='text' id='value1'>
   <label for='value2'>Valor 2:</label>
@@ -15,13 +20,59 @@
   <button id='button'>Somar</button>
   <p id='result'></p>
   <script>
+    //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+    /*
     function sum() {
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
-      const result = parseInt(value1) + parseInt(value2);
-      document.getElementById('result').innerHTML = `Resultado: ${result}`;
-      document.getElementById('value1').value = '';
-      document.getElementById('value2').value = '';
+
+      if(value1 === Number || value2 === Number) {
+        try {
+          const result = parseInt(value1) + parseInt(value2);
+          document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        } catch {
+          throw new Error('Não deu, use números mozão, vlw flw');
+          document.getElementById('result').innerHTML = `Erro: ${error.message}`;
+        } finally {
+          document.getElementById('value1').value = '';
+          document.getElementById('value2').value = '';
+        }
+      }
+    }
+          if(typeof value1 !== Number || typeof value2 !== Number) {
+        throw new Error('Não dá para somar letras numa calculadora, use números mozão, vlw flw');
+      } 
+            if(typeof value1 !== 'number' || typeof value2 !== 'number') {
+        throw new Error('Preciso de dois números, okay? u.u');
+      }
+      (!value1 || !value2)
+    */
+
+    function verifyingTheNumber(value1, value2) {
+      if(!value1 || !value2) {
+        throw new Error('Preciso de dois números, okay? u.u');
+      }
+      if(isNaN(value1) || isNaN(value2)) {
+        throw new Error('Não dá para somar letras numa calculadora, use números mozão, vlw flw')
+      }
+    }
+
+    function sum() {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+
+      try {
+        verifyingTheNumber(value1, value2);
+        const result = parseInt(value1) + parseInt(value2);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+
+      } catch(error) {
+        document.getElementById('result').innerHTML = `Erro: ${error.message}`;
+
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
     }
     window.onload = () => {
       const button = document.getElementById('button');
