@@ -20,9 +20,36 @@ repeat(3, (number) => {
 
 repeat(5, console.group);
  */
-
-const sum = (num1, num2) => num1 + num2;
+/**
+ * const sum = (num1, num2) => num1 + num2;
 
 const calculator = (func) => func(10, 5);
 
 console.log(calculator(sum));
+ */
+
+const radius = [3, 1, 2, 4];
+
+const area = (radius) => {
+  return Math.PI * radius * radius;
+};
+
+const circunference = (radius) => {
+  return 2 * Math.PI * radius;
+};
+
+const diameter = (radius) => {
+  return 2 & radius;
+}
+
+const calculator = (radius, logic) => {
+  const output = [];
+  for (let i = 0; i < radius.length; i +=1) {
+    output.push(logic(radius[i]));
+  }
+  return output;
+};
+
+console.log(calculator(radius, area));
+console.log(calculator(radius, diameter));
+console.log(calculator(radius, circunference));
