@@ -30,26 +30,29 @@ console.log(calculator(sum));
 
 const radius = [3, 1, 2, 4];
 
-const area = (radius) => {
-  return Math.PI * radius * radius;
+//funções com seus cálculos, precisando dos parâmetros bases pra dar match na função base
+const area = (elemento) => {
+  return Math.PI * elemento * elemento;
 };
 
-const circunference = (radius) => {
-  return 2 * Math.PI * radius;
+const circunference = (elemento) => {
+  return 2 * Math.PI * elemento;
 };
 
-const diameter = (radius) => {
-  return 2 & radius;
+const diameter = (elemento) => {
+  return 2 & elemento;
 }
 
-const calculator = (radius, logic) => {
+//função base para implementar a lógica das funções de cáculo
+const calculator = (elemento, logic) => {
   const output = [];
-  for (let i = 0; i < radius.length; i +=1) {
-    output.push(logic(radius[i]));
+  for (let i = 0; i < elemento.length; i +=1) {
+    output.push(logic(elemento[i]));
   }
   return output;
 };
 
+//substituindo os parâmetros bases pelo array e funções com os cáculos
 console.log(calculator(radius, area));
 console.log(calculator(radius, diameter));
 console.log(calculator(radius, circunference));

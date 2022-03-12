@@ -18,15 +18,11 @@ const STUDENT_ANSWERS = ['N.A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B']
 
 //função theResult é a base para implementar a lógica de uma outra função, então recebe a função logic e os param que precisa para a logic funcionar;
 const theResult = (rightAnswers, studentAnswers, logic) => {
-  //logic vai ser a função que vamos chamar e usar para ter o resultado;
-
-  //result vai ter chamar a função logic para pegar seu return;
   let result = 0;
   for (let i = 0; i < rightAnswers.length; i += 1 ) {
-    //o result vai ser o resultado da função com a lógica única: cada letra passada do array, é implementado a lógica da função;
+    //o result vai ter o resultado da função com a lógica única: cada letra passada do array, é implementado a lógica da função;
     result += logic(rightAnswers[i], studentAnswers[i]);
   }
-
   return `${result} total da contagem de respostas`;
 };
 
