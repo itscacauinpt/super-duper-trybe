@@ -27,4 +27,14 @@ const verifyAges = (arr, minimumAge) => {
   
 };
 
-console.log(verifyAges(people, 18));
+//console.log(verifyAges(people, 18));
+
+//some equals to 'does any element have theses characteristics?'
+const hasNegative = [-2, -1, 0, 1, 2]
+const moreThanZero = hasNegative.some((element) => element < 0);
+console.log(moreThanZero);//return true because there's negative elements: 'it has elements minor than zero?'
+
+//every number has to meet the condition
+const itHAsPositive = [1, 2, 3];
+const positive = itHAsPositive.every((element) => element > 0);
+console.log(positive); //it returns true because EVERY number/element is greater than zero. 'does this array have all its item greater than zero?'

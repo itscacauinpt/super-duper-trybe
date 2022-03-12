@@ -21,3 +21,11 @@ const arrayOfValues = ['josé', 50, 0.25, { comida: 'Chocolate' }];
 arrayOfValues.forEach((element) => {
   console.log('Cada elemento do array:', element);
 });
+
+//forEach does something para cada element:
+[1, 2, 3].forEach(function (item, index) {
+  console.log(item, index);
+})
+
+const array  = [1, 2, 3];
+array.forEach((item, index) => console.log(item, index));

@@ -41,3 +41,21 @@ function findMusic(id) {
 console.log(findMusic('31031685'));
 
 //the array.find will search inside of the array and it will return the first element for wiccallback function return a tri=uthy value 
+//goes through all the elements of an erray, if the considion its true it will return the elements, if it doesnt find your item, it return undefined
+const objects = [
+  {
+    id: 'a'
+  },
+  {
+    id: 'b'
+  },
+  {
+    id: 'c'
+  }
+];
+const found = objects.find((item) => item.id === 'b');
+console.log(found);
+
+//find index
+const foundIndex = objects.findIndex((item) => item.id === 'b');
+console.log(foundIndex);
