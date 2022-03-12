@@ -6,22 +6,22 @@ const isEven = num.find(verifyEven); //console.log(verifyEven(2));//true
 
 const numbers = [19, 21, 30, 3, 45, 22, 15];
 
-const findDivisibleBy3And5 = () => {
+const findDivisibleBy3And5 = (array) => {
   // Adiciona seu código aqui
-  return numbers.find((number) => number % 3 === 0 && number % 5 === 0);
+  return array.find((number) => number % 3 === 0 && number % 5 === 0);
 }
-//console.log(findDivisibleBy3And5())
+console.log(findDivisibleBy3And5(numbers));
 
 
 //2 - Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
 
 const names = ['João', 'Irene', 'Fernando', 'Maria'];
 
-const findNameWithFiveLetters = () => {
+const findNameWithFiveLetters = (arrayName) => {
   // Adicione seu código aqui:
-  return names.find((nome => nome.length === 5));
+  return arrayName.find((nome => nome.length === 5));
 }
-//console.log(findNameWithFiveLetters());
+console.log(findNameWithFiveLetters(names));
 
 
 //3 - Utilize o find para encontrar a música com id igual a 31031685 , caso ela exista:
@@ -39,3 +39,5 @@ function findMusic(id) {
 };
 
 console.log(findMusic('31031685'));
+
+//the array.find will search inside of the array and it will return the first element for wiccallback function return a tri=uthy value 
