@@ -47,3 +47,4 @@ const outpuMax = arr.reduce(function(accmax, curr) {
   return accmax;
 }, 0)
 console.log(outpuMax);
+console.log('meh')
