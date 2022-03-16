@@ -71,7 +71,7 @@ function formatedBookNames() {
 
 //2 - Construa um array de objetos a partir do array de livros. Cada objeto deve conter uma propriedade author , com o nome da pessoa autora do livro, e uma propriedade age com a idade dessa pessoa quando o livro foi lançado. O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando suas idades quando o livro foi lançado.
 function nameAndAge() {
-  const arrayDeObjetos = books.map((book) => ({name: book.author.name, age: book.author.birthYear})); 
+  const arrayDeObjetos = books.map((book) => ({name: book.author.name, ['age when released']: (book.releaseYear - book.author.birthYear )})); 
   //oh dificuldade pra achar o lugar certo do parenteses ¬¬' 
   return arrayDeObjetos;
 }
@@ -94,10 +94,13 @@ function oldBooksOrdered() {
 
 //5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
 function fantasyOrScienceFictionAuthors() {
-  const fantScien = books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia')
-  const fantScienName = fantScien.map((book) => `${book.author.name}`);
-  const fantScienNameSort = fantScienName.sort();
-  return fantScienNameSort;
+  const fantScien = books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia').map((book) => {
+    return`${book.author.name}`
+  });
+  return fantScien.sort();
+  //const fantScienName = fantScien.map((book) => `${book.author.name}`);
+  //const fantScienNameSort = fantScienName.sort();
+  //return fantScienNameSort;
   //return fantScien.sort((bookA, bookB) => bookB.name - bookA.name);
 }
 //console.log(fantasyOrScienceFictionAuthors())
@@ -105,8 +108,9 @@ function fantasyOrScienceFictionAuthors() {
 //6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
 function oldBooks() {
   // MANO
-  const filter =  books.filter((book) => book.releaseYear < 1958);
-  return filter.map((book) => book.name);
+  //const filter = books.filter((book) => book.releaseYear < 1958).map((book) => book.name);
+  //return filter.map((book) => book.name);
+  return books.filter((book) => book.releaseYear < 1958).map((book) => book.name);
 }
 //console.log(oldBooks());
 
