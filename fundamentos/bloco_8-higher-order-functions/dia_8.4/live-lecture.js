@@ -36,6 +36,7 @@ console.log(perguntaCompleta);
 const outup = players.map((player) => `${player.fullName}, email: ${player.email}`);
 //console.log(outup);
 
+
 // reduce to a array with people with the same age
 const users = [
   {name: 'ana', age: 21},
@@ -51,6 +52,8 @@ const newArray = users.reduce(function (acc, curr){
   } else {
     acc[curr.age] = 1;
   }
+  console.log(acc[curr.age])
+
   return acc;
 
 }, {})//initial value will be an empty object, because there's no data presente in it
