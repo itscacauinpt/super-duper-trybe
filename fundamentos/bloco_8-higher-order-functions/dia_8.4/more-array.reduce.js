@@ -31,14 +31,6 @@ const otoBigger = numb.reduce((acc, curr) => {
 });
 //console.log(otoBigger);
 
-const string = {
-  'a': 'b',
-  'c': 'd',
-  'e': 'f',
-};
-
-//console.log(string['a'])
-
 const otroNumbers = [18, 19, 23, 53, 4, 5, 76, 23, 54];
 
 const evenSum = otroNumbers.filter((number) => {
@@ -124,23 +116,16 @@ const estudantes = [
   },
 ];
 
-const getBestClass = (acc, materia) => {
-  if (acc.nota > materia.nota) return acc;
-  return materia;
+const getBestClass = (materias, melhorMateria) => {
+  if (materias.nota > melhorMateria.nota) {
+    return materias;
+  }
+  return melhorMateria;
 };
 
 const reportBetter = (students) => students.map((student) => ({
   name: student.nome,
   materia: student.materias.reduce(getBestClass).name}));
 
-console.log(reportBetter(estudantes));
-
-/**
- * const maiorNota = estudantes.map((element) => {
-  const nota = element.materias.reduce((acc, curr) => {
-
-  });
-})
-//console.log(maiorNota)
- */
+//console.log(reportBetter(estudantes));
 
