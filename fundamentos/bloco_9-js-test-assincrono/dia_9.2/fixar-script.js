@@ -53,4 +53,3 @@ usoJSONPorque.muitasLinguagensDaoSuporte.map((linguagens) => {
 // wget 'webwebweb' -O - -q
 // callback hell: http://callbackhell.com/
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
-

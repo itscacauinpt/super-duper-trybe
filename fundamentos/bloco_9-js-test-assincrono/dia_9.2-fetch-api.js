@@ -44,4 +44,4 @@ const fetchJoke3 = async () => {
     console.log(`Algo deu errado :( \n${error}`);
   }
 }
-// fetchJoke3();
+// fetchJoke3(); // 
