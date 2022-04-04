@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Exemplo de Formulários</h1>
+
+    <form action="#" method="get">
+      <label for="input-text">Digite seu pokemon favorito</label>
+        <input type="text" name="textão" placeholder="digite alguma coisa" required class="" value="eevee" id="input-text">
+        <br>
+        <textarea name="" id="" cols="30" rows="10">Querido Ash, eu não peguei todos os pokemon...</textarea>
+				<button type="submit">Enviar</button>
+    </form>
+    <br>
+    <p>Qual pokemon escolheria primeiro?</p>
+    <form action="" method="get">
+      <label for="poke-1">
+        <input type="radio" id="poke-1" value="ev" name="pokemon" checked>Eevee
+      </label>
+      <label for="poke-2">
+        <input type="radio" id="poke-2" value="bulb" name="pokemon">Bulbassauro
+      </label>
+      <input type="radio" id="poke-3" value="treco" name="pokemon">Treecko
+      <br>
+      <br>
+      <p>De onde você não é?</p>
+      <label for="hub-1">
+        <input type="checkbox" id="hub-1" name="hub" value="SP">São Paulo
+      </label>
+      <label for="hub-2">
+        <input type="checkbox" id="hub-2" name="hub" value="SJ">São José 
+      </label>
+        <input type="checkbox" id="hub-3" name="hub" value="SQ">São Quebrada
+        <input type="checkbox" id="hub-4" name="hub" value="SF">São Floripa
+    </form>
+    <br>
+    <br>
+    <p>De onde mesmo?</p>
+    <form action="" method="get">
+      <select name="Estado" id="dropdrown-estado">
+        <option value="sp">São Paulo</option>
+        <option value="sp">São José</option>
+        <option value="sp">São Sei lá</option>
+        <option value="sp">São Geografia</option>
+      </select>
+    </form>
+    <br>
+    <br>
+    <p>Mande seu comprovante de residência</p>
+    <form action="" method="post" enctype="multipart/form-data">
+      <input type="file" name="arquivo" id="">
+      <br>
+      <button type="submit" name="" id="">Enviar</button>
+    </form>
+    <br>
+    <br>
+    <p>Acessar conta, não conta pra ninguém tua senha hein</p>
+    <form action="" method="get" enctype="multipart/form-data">
+      <p>Usuário</p>
+      <input type="text" name="user" required>
+      <p>senha</p>
+      <input type="password" name="" id="" required>
+      <br>
+      <button>Entrar</button>
+    </form>
+    
+</body>
+</html>
