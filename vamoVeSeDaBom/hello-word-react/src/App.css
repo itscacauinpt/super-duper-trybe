@@ -1,7 +1,13 @@
-.App {
+.Hello {
+  text-align: center;
+  background-color: violet;
+}
+
+.Saquei {
   text-align: center;
 }
 
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +42,4 @@
     transform: rotate(360deg);
   }
 }
+*/
