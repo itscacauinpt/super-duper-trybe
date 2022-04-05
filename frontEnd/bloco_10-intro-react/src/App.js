@@ -2,10 +2,12 @@ import React from 'react';
 import './App.css';
 import Componente from './Componente';
 import OtherComp from './OtherComp';
+import Header from './Header';
+import Content from './Content';
 // import React, { useState } from 'react'
 // import TodoList from './TodoList';
 
-// insira a função Task a seguir acima do seu componente App dentro do arquivo App.js :
+// para fixar:
 const Task = (value) => {
   return (
     <li key={value}>{value}</li>
@@ -17,6 +19,10 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <Header />
+      <Content />
+      
+
       <section className='App'>
         <h1>Oi</h1>
       </section>
