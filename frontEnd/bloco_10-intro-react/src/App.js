@@ -4,6 +4,7 @@ import Componente from './Componente';
 import OtherComp from './OtherComp';
 import Header from './Header';
 import Content from './Content';
+import Image from './Image';
 // import React, { useState } from 'react'
 // import TodoList from './TodoList';
 
@@ -19,9 +20,10 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <Image source="{staringCatQueNãoTenho}" alternativeText="Cute cat staring"/>
+
       <Header />
       <Content />
-      
 
       <section className='App'>
         <h1>Oi</h1>
