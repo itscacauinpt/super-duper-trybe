@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+// é aqui que faço o link entre o html e os componentes do js
+// primeiro argumento -> react.strictmode
+// segundo arg -> root
+// creating a component
+// we cant return more than one thing
+// so we create one thing that has more than one thing :v
+    
 ReactDOM.render(
   <React.StrictMode>
     <App />
