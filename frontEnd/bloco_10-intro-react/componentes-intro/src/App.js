@@ -19,8 +19,10 @@ class App extends React.Component {
     const energyDrink = {
       id: 77,
       user: "cena@gmail.com",
+      // user: 2,
       nam: 'Jonh Cena',
-      product: "Monster 500mL",
+      // product: "Monster 500mL",
+      product: 2,
       price: {
         value: 9.99,
         currency: "dollars"
@@ -61,6 +63,9 @@ class App extends React.Component {
 }
 
 export default App;
+// Caso não tenha utilizado o create-react-app para preparar o aplicativo React , será necessário o download da depedência externa do PropTypes através do seguinte comando: npm install --save-dev prop-types .
+// Warning: Failed prop type: The prop `product` is marked as required in `Order`, but its value is `undefined`.
+
 // Como boa prática utilizamos a chave `id` do objeto como nossa key por ser única,
 // caso ela não existisse, precisarímos utilizar o `index` como segundo parâmetro do map.
 // componente app é pai do componente user profile

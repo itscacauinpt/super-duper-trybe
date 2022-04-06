@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Order extends React.Component {
   render() {
@@ -10,5 +11,10 @@ class Order extends React.Component {
     )
   }
 }
+
+Order.propTypes = {
+  user: PropTypes.string.isRequired,
+  product: PropTypes.string.isRequired,
+};
 
 export default Order;
