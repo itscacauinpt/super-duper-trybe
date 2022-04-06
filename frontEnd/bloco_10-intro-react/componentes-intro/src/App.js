@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import './App.css';
 import UserProfile from './UserProfile';
 import Order from './Order';
@@ -48,13 +48,12 @@ class App extends React.Component {
       <>
       <div className='App'>
         <h1>Orders recently created</h1>
-      </div>
-      <div className='App'>
         <Order order={headphone}/>
         <Order order={energyDrink}/>
       </div>
       <div className='App'>
-        {users.map(user => <UserProfile user={user}/>)}
+        <h2>Usuários aleatórios aqui do exercicio</h2>
+        {users.map(user => <UserProfile key={user.id} user={user}/>)}
       </div>
       </>
     )
@@ -62,6 +61,8 @@ class App extends React.Component {
 }
 
 export default App;
+// Como boa prática utilizamos a chave `id` do objeto como nossa key por ser única,
+// caso ela não existisse, precisarímos utilizar o `index` como segundo parâmetro do map.
 // componente app é pai do componente user profile
 // não é muito legal colocar dados dentro da função render 
 
