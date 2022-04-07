@@ -1,13 +1,13 @@
 import React from "react";
-import Pokemon from "./Pokemon";
+import Pokemon from "./Pokemon"; // Esse componente recebe como entrada uma lista de pokemons para serem mostrados na tela.
 
 class Pokedex extends React.Component {
   render() {
-    const { pokemons } = this.props;
+    const { poke } = this.props; // poke={Poke} oh o parâmetro que coloquei no app.jsx sendo usado aqui!!
     return (
-      <div>
-        {pokemons.map(pokemon => <Pokemon key={pokemon.id} pokemon={pokemon} />)}
-      </div>
+      <section className="Father">
+        {poke.map(thePoke => <Pokemon key={thePoke.id} pokeParam={thePoke} />)}
+      </section>
     )
   }
 }
