@@ -1,0 +1,9 @@
+.Form {
+  align-items: center;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
