@@ -1,5 +1,5 @@
 Tests that works one hundred percent, confia u.u
-<!-- import React from 'react';
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
@@ -103,4 +103,4 @@ describe('Teste da aplicação toda', () => {
 
     expect(global.fetch).toHaveBeenCalledTimes(1);
   });
-}); -->
+});
