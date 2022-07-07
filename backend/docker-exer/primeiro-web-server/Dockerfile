@@ -37,3 +37,9 @@ CMD [ "httpd-foreground" ]
 # 1c2fe363eb1b   minha-webby   "httpd-foreground"   55 seconds ago   Up 47 seconds   0.0.0.0:1234->80/tcp, :::1234->80/tcp   meu-container
 
 #docker rm -f meu-container
+
+#//
+
+#docker build -t novo-servidor .
+#docker run -d -p 1601:80 --name novo-container novo-servidor
+#http://localhost:1601/
