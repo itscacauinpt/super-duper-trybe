@@ -1,13 +1,14 @@
 # https://hub.docker.com/_/httpd
 
 FROM httpd:2.4
-#ADD index.html /usr/local/apache2/htdocs/
 COPY index.html /usr/local/apache2/htdocs/
 EXPOSE 80
 CMD [ "httpd-foreground" ]
 
 #COPY source dest
 #copiar um arquivo no computador local e colocá-lo dentro da imagem, no caminho especificado à frente, index da nossa pasta para o htdocs da imagem.
+
+#OU
 
 #ADD source dest
 #ADD Faz o download do conteúdo de uma URL <src> na pasta de destino <dest> e pode descompactar auto arquivos compactados tipo tar, gzip e blah
