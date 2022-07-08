@@ -1,4 +1,4 @@
-#RUN vs. ENTRYPOINT vs. CMD
+RUN vs. ENTRYPOINT vs. CMD
 
 RUN <comando> <argumento1> <argumento2> <argumentoN>:
 Indica que o comando dado deve ser executado durante a construção da imagem Docker!
