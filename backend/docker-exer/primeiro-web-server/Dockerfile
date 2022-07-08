@@ -42,4 +42,5 @@ CMD [ "httpd-foreground" ]
 
 #docker build -t novo-servidor .
 #docker run -d -p 1601:80 --name novo-container novo-servidor
-#http://localhost:1601/
+#docker container run -d -p 1234:80 --name meu-container minha-webby
+#http://localhost:1601/ | 1234:80
