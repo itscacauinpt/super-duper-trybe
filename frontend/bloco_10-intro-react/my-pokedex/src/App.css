@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  color: palevioletred;
+}
+
+.Father {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.PokeBox {
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+  border: 2px solid pink;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  min-width: 40%;
+}
