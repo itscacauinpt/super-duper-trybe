@@ -12,40 +12,50 @@
 10. Rode o comando cat /etc/debian_version que deve retornar a versão atual do sistema do container.
 11. Encerre o terminal.
 12. Remova somente o container criado para esse exercício.
+
 [BÔNUS] Crie e rode de modo interativo em modo 'Cleanup', a imagem andrius/ascii-patrol.
+
 [BÔNUS] **Encerre o container utilizando os botões [ctrl] + [c].
 
-# Comandos:
+## Comandos:
 
-1.2.3.
-  docker images
-  docker pull debian:stable-slim
+* Partes 1, 2 e 3:
 
-4.5.
-  -d -> segundo plano
-  -i -> interção
-  -t -> terminal
-  docker run -dit --name exec-container debian:stable:slim
-  docker attach exec-container
-    cat /etc/*-release
-    cd home
-    echo 'Hi' > ativ.txt
-    ls
-    exit
-  //
-  docker run -it --name exec-container debian:stable:slim
-    cat /etc/*-release
-    exit
+docker images
+docker pull debian:stable-slim
+
+* Partes 4 e 5:
+
+*-d -> segundo plano*
+*-i -> interção*
+*-t -> terminal*
+
+docker run -dit --name exec-container debian:stable:slim
+docker attach exec-container
+cat /etc/*-release
+cd home
+echo 'Hi' > ativ.txt
+ls
+exit
+
+docker run -it --name exec-container debian:stable:slim
+cat /etc/*-release
+exit
   
-6.7.8.9.10.11.
-    exit
-  docker container ls -a
-  docker start exec-container
-  docker attach exec-container
-  cat /etc/debian_version
-  exit
+* Partes 6, 7, 8, 9, 10 e 11
 
-12. 
-  docker container ls -a
-  docker rm exec-container
-  docker container ls -a
+exit
+docker container ls -a
+docker start exec-container
+docker attach exec-container
+cat /etc/debian_version
+exit
+
+* Parte 12
+
+docker container ls -a
+docker rm exec-container
+docker container ls -a
+
+#### Bônus
+--rm -> cleanup
