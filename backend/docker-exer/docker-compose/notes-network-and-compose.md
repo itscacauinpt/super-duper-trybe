@@ -3,8 +3,23 @@
 _basicamente receita de docker run_
 __docker-compose.yaml__
 
+*docker-compose up -d*
 
-_in docker-compose_
+##### Política de reinicialização
+
+Dá restart!
+O Compose possui quatro políticas de reinicialização, sendo elas:
+
+*no* : define que o container não reiniciará automaticamente (Padrão);
+*on-failure*: define que o container será reiniciado caso ocorra alguma falha apontada pelo exit code diferente de zero;
+*always*: especifica que sempre que o serviço parar, seja por um falha ou porque ele simplesmente finalizou sua execução, ele deverá ser reiniciado;
+*unless-stopped*: define que o container sempre será reiniciado, a menos que utilizemos o comando docker stop ~container~ manualmente.
+
+##### Política de reinicialização
+
+_O serviço depende de..._
+
+*depends-on:*
 
 # 19.3 - Aula ao Vivo
 
@@ -44,16 +59,16 @@ wget www.google.com *network is unreachable*
 
 ## Comandos
 
-_lista de redes_
+##### lista de redes_
 docker network ls
 
-_verificando uma rede_
+##### verificando uma rede_
 docker inspect *nome do container*
 
-_criando rede_
+##### criando rede_
 docker network create -d bridge *nome da rede*
 
-_inserindo e retirando containers de uma rede_
+##### inserindo e retirando containers de uma rede_
 docker network connect *nome da rede* *nome do container*
 docker network disconnect *nome da rede* *nome do container*
 
@@ -67,8 +82,14 @@ docker run -d -p 3000:80 *imagem*
 *Volumes* -> persistir dados, save the changes that i might add
 Databases? stateful app? docker volumes!
 
-_mapeando volumes_
+##### mapeando volumes
 docker run -v *pwd*:*destino* -p 3001:80 --name *outro container* *mesma imagem*
 
 docker run -v /home/mount/data*host dir*:/var/lib/mysql/data*container dir* _host volumes_
 docker run -v name:/var/lib/mysql/data*container dir* _named volumes_
+
+##### in docker-compose_
+
+*docker-compose up* (na pasta do .yaml)
+*docker-compose logs nome-do-serviço*
+*docker-compose down*
