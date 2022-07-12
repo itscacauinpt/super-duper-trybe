@@ -1,0 +1,35 @@
+version: '3'
+services:
+  frontend:
+    build: frontend/ #Especificamos o contexto, ou seja, a pasta onde está o Dockerfile.
+    ports:
+      - 3000:3000 #disponível/exposto na porta 3000
+    depends_on:
+      - backend #frontend depende do backend
+  backend:
+    build: backend/ #Mesmo caso aqui, onde está o Dockerfile.
+    ports:
+      - 3001:3001 #exposto na porta 3001
+    environment:
+      - DB_HOST=database #variável de ambiente, que vai ser utilizada pelo backend
+    depends_on:
+      - database #dependência do ambiente, backend obiviamenti depende da database que setamos
+  database:
+    image: betrybe/docker-compose-example-database:v1 #Especificamos a Imagem Docker diretamente.
+    restart: on-failure
+
+#criando serviços, portas
+#o primeiro parâmetro é sempre a porta do computador local e o segundo parâmetro é a porta exposta no container.
+#O serviço backend agora possui uma variável de ambiente chamada DB_HOST, que poderá ser utilizada pelo servidor para se conectar ao banco de dados.
+
+#docker-compose up -d
+#docker-compose down
+#docker-compose logs <nome-do-serviço>
+#docker-compose ps
+
+#Podemos deixar nítido que as imagens precisam ser construídas novamente usando o Compose. Para isso, utilizamos a flag --build, junto com o comando docker-compose up.
+#docker-compose up -d --build
+
+#docker-compose up backend
+#docker-compose logs backend
+#docker-compose logs --tail 5 database
