@@ -28,16 +28,17 @@ function somaMultiplica([num1, num2, num3]) {
 function getRandomNumber() {
   return Math.floor(Math.random() * 100 + 1);
 }
+// console.log(getRandomNumber());
 
 function getRandomNumbersArray() {
   // const randomNumbers = new Array(3);
   // return randomNumbers.push(getRandomNumber);
   // return new Array(3);
   const randomNumbers = Array.from({ length: 3 }).map(getRandomNumber);
+  return randomNumbers;
 }
-
-console.log(getRandomNumbersArray());
+// console.log(getRandomNumbersArray());
 
 // console.log(somaMultiplica(1, 2, 3));
 // somaMultiplica([1, 2, 3]).then((resolve) => console.log(resolve)).catch((error) => console.log(error))
-somaMultiplica(getRandomNumbersArray()).then((resolve) => console.log(resolve)).catch((error) => console.log(error));
+somaMultiplica(getRandomNumbersArray()).then((resolve) => console.log(resolve)).catch((error) => console.log(error.message));
