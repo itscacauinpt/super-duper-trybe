@@ -1,0 +1,4 @@
+npm init -y
+npm mysql2
+npm express body-parser
+npm nodemon -D
