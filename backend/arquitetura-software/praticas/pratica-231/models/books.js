@@ -19,5 +19,4 @@ async function getByAuthorId(authorId) {
 module.exports = {
   getAll,
   getByAuthorId,
-  // getOne,
 }

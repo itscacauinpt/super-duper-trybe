@@ -3,7 +3,6 @@ const connection = require('./connection');
 const addNewKey = ({ id, firstName, middleName, lastName }) => {
   const full = [firstName, middleName, lastName].filter((notEmpty) => notEmpty).join(' ');
   return {
-    
     id, 
     firstName,
     middleName,
@@ -22,7 +21,6 @@ const serialize = (authorData) => {
 }
 
 async function getAll() {
-  // const result = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
   const [ authors ] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM model_example.authors');
   return authors
     .map(serialize)
