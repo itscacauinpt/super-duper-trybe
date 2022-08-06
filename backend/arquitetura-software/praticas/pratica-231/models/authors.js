@@ -29,6 +29,15 @@ async function getAll() {
     .map(addNewKey);
 }
 
+async function getOne(id) {
+  const query = 'SELECT id, first_name, middle_name, last_name FROM model_example.authors where id=?;';
+  const [ author ] = await connection.execute(query, [id])
+  return author
+  .map(serialize)
+  .map(addNewKey);
+}
+
 module.exports = {
   getAll,
+  getOne,
 }
