@@ -26,10 +26,21 @@ async function getAll() {
   return authors.map(formated);
 }
 
+async function getById(id) {
+  // const query = 'SELECT id, first_name, middle_name, last_name FROM model_example.authors where id=?;';
+  // const [ author ] = await connection.execute(query, [id])
+  return await connection.execute('SELECT * FROM model_example.authors WHERE id = ?', [id])
+  .then(([results]) => {
+  if (results[0]) return formated(results[0]);
+  return null;
+  });
+}
+
 async function getOne(id) {
-  const query = 'SELECT id, first_name, middle_name, last_name FROM model_example.authors where id=?;';
-  const [ author ] = await connection.execute(query, [id])
-  return author.map(formated);
+  // const query = 'SELECT id, first_name, middle_name, last_name FROM model_example.authors where id=?;';
+  // const [ author ] = await connection.execute(query, [id])
+  const author = await getById(id);
+  return author;
 }
 
 // adicionando novas pessoas
@@ -44,4 +55,5 @@ module.exports = {
   getAll,
   getOne,
   create,
+  getById,
 }
