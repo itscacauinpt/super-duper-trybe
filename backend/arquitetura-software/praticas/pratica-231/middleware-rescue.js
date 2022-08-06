@@ -36,7 +36,7 @@ async function verifyAuthorPost(req, res, next) {
 // O campo author_id só é válido se existir uma pessoa autora com esse id;
 const isBookValid = (title, author_id) => {
   if (!title || title.length < 3) return false;
-  if (!verifyId(author_id)) return false;
+  // if (!verifyId(author_id)) return false;
   if (!author_id) return false;
 
   return true;
