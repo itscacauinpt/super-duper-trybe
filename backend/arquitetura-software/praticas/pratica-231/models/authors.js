@@ -35,7 +35,16 @@ async function getOne(id) {
   .map(addNewKey);
 }
 
+// adicionando novas pessoas
+async function create(firstName, middleName, lastName) {
+  const query = 'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)';
+  const newAuthor = await connection.execute(query, [firstName, middleName, lastName]);
+
+  return newAuthor;
+}
+
 module.exports = {
   getAll,
   getOne,
+  create,
 }
