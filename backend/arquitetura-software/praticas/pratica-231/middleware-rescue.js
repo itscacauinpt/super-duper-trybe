@@ -1,3 +1,5 @@
+const Author = require('./models/authors');
+
 const rescue = action => async (request, response, next) => {
   try {
     await action(request, response, next);
@@ -32,11 +34,13 @@ async function verifyAuthorPost(req, res, next) {
 }
 
 //verificando novos livros
-// Título precisa ter pelo menos três caracteres;
-// O campo author_id só é válido se existir uma pessoa autora com esse id;
+// {
+// 	"title": "Escuta Aqui",
+// 	"author_id": 6
+// }
 const isBookValid = (title, author_id) => {
   if (!title || title.length < 3) return false;
-  // if (!verifyId(author_id)) return false;
+  if (!Author.getById(author_id)) return false;
   if (!author_id) return false;
 
   return true;
