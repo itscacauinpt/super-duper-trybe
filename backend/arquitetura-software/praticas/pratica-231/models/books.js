@@ -16,7 +16,16 @@ async function getByAuthorId(authorId) {
   return bookChosen;
 }
 
+// create novo livro
+async function create(title, author_id) {
+  const query = 'insert into model_example.books (title, author_id) values (?,?)';
+  const newBook = await connection.execute(query, [ title, author_id ]);
+
+  return newBook;
+}
+
 module.exports = {
   getAll,
   getByAuthorId,
+  create,
 }
