@@ -1,10 +1,13 @@
+const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const port = 3000
 
 const Author = require('./models/authors');
 const booksModel = require('./models/books');
-const { verify, rescue } = require('./middleware-rescue');
+const { verify, rescue, verifyAuthor } = require('./middleware-rescue');
+
+app.use(bodyParser.json());
 
 app.get('/authors', async (_req, res) => {
   const authors = await Author.getAll();
@@ -34,6 +37,15 @@ app.get('/books/:author_id', verify, async (req, res) => {
   const bookChosen = await booksModel.getByAuthorId(author_id);
 
   res.status(200).json(bookChosen);
+});
+
+//post novo author
+app.post('/authors', verifyAuthor, async (req, res) => {
+	const { first_name, middle_name, last_name } = req.body;
+
+	await Author.create(first_name, middle_name, last_name);
+
+	res.status(201).json({ message: 'Autor criado com sucesso! '});
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
