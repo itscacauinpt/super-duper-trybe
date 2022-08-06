@@ -6,7 +6,7 @@ const rescue = action => async (request, response, next) => {
   }
 }
 
-async function verify(req, res, next) {
+async function verifyId(req, res, next) {
   const { id } = req.params;
   if (!id) return res.status(404).json({ message: 'Not found' });
 
@@ -21,7 +21,7 @@ const isValid = (firstName, middleName, lastName) => {
 	return true;
 };
 
-async function verifyAuthor(req, res, next) {
+async function verifyAuthorPost(req, res, next) {
   const { first_name, middle_name, last_name } = req.body;
 
 	if (!isValid(first_name, middle_name, last_name)) {
@@ -31,8 +31,30 @@ async function verifyAuthor(req, res, next) {
   next();
 }
 
+//verificando novos livros
+// Título precisa ter pelo menos três caracteres;
+// O campo author_id só é válido se existir uma pessoa autora com esse id;
+const isBookValid = (title, author_id) => {
+  if (!title || title.length < 3) return false;
+  if (!verifyId(author_id)) return false;
+  if (!author_id) return false;
+
+  return true;
+}
+
+async function verifyBookPost(req, res, next) {
+  const { title, author_id } = req.body;
+
+  if (!isBookValid(title, author_id)) {
+    return res.status(400).json({ message: 'Dados inválidos!' });
+  }
+
+  next();
+}
+
 module.exports = {
   rescue,
-  verify,
-  verifyAuthor,
+  verifyId,
+  verifyAuthorPost,
+  verifyBookPost,
 };
