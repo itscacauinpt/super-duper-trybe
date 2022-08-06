@@ -6,9 +6,14 @@ const rescue = action => async (request, response, next) => {
   }
 }
 
-// async function rescue(_req, res, next) {
+async function verify(req, res, next) {
+  const { id } = req.params;
+  if (!id) return res.status(404).json({ message: 'Not found' });
 
-//   if (!author) return res.status(404).json({ message: 'Not found' });
-// }
+  next();
+}
 
-module.exports = rescue;
+module.exports = {
+  rescue,
+  verify,
+};
