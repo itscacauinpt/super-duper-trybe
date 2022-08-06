@@ -25,7 +25,7 @@ app.get('/authors/:id', rescue(async (req, res) => {
 }));
 
 // Crie uma rota /books para trazer a lista de todos os livros;
-app.get('/books', verifyId, async (_req, res) => {
+app.get('/books', async (_req, res) => {
   const books = await BooksModel.getAll();
 
   res.status(200).json(books);
