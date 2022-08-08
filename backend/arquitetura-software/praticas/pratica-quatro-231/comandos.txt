@@ -1,0 +1,31 @@
+npm init -y
+npm i express body-parser
+npm i mysql2
+npm i nodemon -D
+start nodemon, package.json -> "dev": "nodemon inde.js"
+
+schema validation joi -> npm i express joi
+
+-//-
+
+links
+https://joi.dev/api/?v=17.6.0
+https://dev.to/franciscomendes10866/schema-validation-with-joi-and-node-js-1lma
+https://refactoring.guru/design-patterns/singleton
+
+-//-
+
+table usada na pratica
+
+CREATE DATABASE IF NOT EXISTS users_pratica;
+
+USE users_pratica;
+
+CREATE TABLE users (
+	id INT NOT NULL AUTO_INCREMENT,
+	first_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	password VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+);
