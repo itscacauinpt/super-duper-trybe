@@ -1,4 +1,4 @@
-const connection = require('../models/connection');
+const connection = require('./connection');
 
 const formated = (allData) => {
   return {
