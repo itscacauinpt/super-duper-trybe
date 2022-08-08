@@ -4,16 +4,16 @@ const app = express();
 const port = 3000;
 
 const verifyUser = require('./middleware/verifyCreateUser');
-const User = require('./middleware/users');
+const User = require('./models/users');
 
 app.use(bodyParser.json());
 
-app.post('/user', verifyUser, async (req, _res) => {
+app.post('/user', verifyUser, async (req, res) => {
   const { first_name, last_name, email, password } = req.body;
 
   await User.createUser(first_name, last_name, email, password);
 
-  // res.status(201).json({ message: 'Created!' });
+  res.status(201).json({ message: 'Created!' });
 });
 
 app.get('/user', async (_req, res) => {
