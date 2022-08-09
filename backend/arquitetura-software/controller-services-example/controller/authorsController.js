@@ -6,6 +6,14 @@ async function getAll(_req, res) {
   return res.status(200).json(authors)
 }
 
+async function getById(req, res) {
+  const { id } = req.params;
+  const author = await service.getByIdService(id);
+  
+  return res.status(200).json(author);
+}
+
 module.exports = {
   getAll,
+  getById,
 }
