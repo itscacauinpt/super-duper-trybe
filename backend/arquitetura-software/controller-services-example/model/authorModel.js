@@ -14,6 +14,10 @@ async function getByIdModel(id) {
   return authorsArray;
 }
 
+// async function create() {
+
+// }
+
 module.exports = {
   GetAllModel,
   getByIdModel,
