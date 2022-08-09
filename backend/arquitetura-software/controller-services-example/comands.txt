@@ -2,3 +2,10 @@ npm init -y
 npm i express body-parser
 npm i nodemon -D
 npm i mysql2
+
+model -> service -> controller -> server
+
+model: queries
+service: validações
+controller: permissões
+server: requisição
