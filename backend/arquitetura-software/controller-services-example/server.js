@@ -7,6 +7,6 @@ const controller = require('./controller/authorsController');
 
 app.use(bodyParser.json());
 
-app.get('/users', controller.getAll);
+app.get('/authors', controller.getAll);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
