@@ -3,38 +3,70 @@ const ProductModel = require('../models/productModel');
 
 const router = express.Router();
 
-router.get('/list-products', async (req, res) => {
+// list-products
+router.get('/products', async (_req, res) => {
   const products = await ProductModel.getAll();
 
-  res.send(products);
+  // res.send(products);
+  return res.status(200).json(products);
 });
 
-router.get('/get-by-id/:id', async (req, res) => {
+// get-by-id
+router.get('/products/:id', async (req, res) => {
   const product = await ProductModel.getById(req.params.id);
 
-  res.send(product);
+  if (!product) {
+    return res.status(404).json({ message: 'Not found' });
+  }
+
+  // res.send(product);
+  return res.status(200).json(product);
 });
 
-router.post('/add-product', async (req, res) => {
+// add-product
+router.post('/products', async (req, res) => {
   const { name, brand } = req.body;
+
+  if (!name || !brand) {
+    return res.status(400).json({ message: 'Dados inválidos' });
+  }
 
   const newProduct = await ProductModel.add(name, brand);
 
-  res.send(newProduct);
+  // res.send(newProduct);
+  return res.status(201).json(newProduct);
 });
 
-router.post('/delete-product/:id', async (req, res) => {
-  const products = await ProductModel.exclude(req.params.id);
+// delete-product/:id
+router.delete('/products/:id', async (req, res) => {
+  const product = await ProductModel.getById(req.params.id);
 
-  res.send(products);
+  if (!product) {
+    return res.status(404).json({ message: 'Not found' });
+  }
+
+  await ProductModel.exclude(req.params.id);
+  // res.send(products);
+  return res.status(200).json({ message: 'Excluído' });
 });
 
-router.post('/update-product/:id', async (req, res) => {
+// update-product/:id
+router.put('/products/:id', async (req, res) => {
   const { name, brand } = req.body;
 
-  const products = await ProductModel.update(req.params.id, name, brand);
+  if (!name|| !brand) {
+    return res.status(400).json({ message: 'Dados inválidos' });
+  }
 
-  res.send(products);
+  const product = await ProductModel.getById(req.params.id);
+
+  if (!product) {
+    return res.status(404).json({ message: 'Produto não encontrado' });
+  }
+
+  const products = await ProductModel.update(req.params.id, name, brand);
+  // res.send(products);
+  return res.status(200).json(products);
 });
 
 module.exports = router;
