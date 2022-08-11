@@ -1,3 +1,12 @@
+1: Pense em qual é o recurso que estamos trabalhando e altere os endpoints para que fiquem padronizados.
+2: Padronize todos os retornos para JSON.
+3: Utilize os verbos (POST, PUT, GET etc.) corretos para cada ação do CRUD.
+
+4: Garanta que todos os endpoints tenham as respostas (status code) coerentes, ou seja, código para requisições bem sucedidas, validações, tratamento de erros, etc.
+-> validações e erros no Service
+
+-//-
+
 npm i mysql2 express body-parser nodemon -D
 
 npm run debug -> "debug": "nodemon index.js"
