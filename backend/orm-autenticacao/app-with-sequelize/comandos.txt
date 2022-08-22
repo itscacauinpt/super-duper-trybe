@@ -26,4 +26,22 @@ Successfully created seeders folder at "/".)
 4️⃣ Criação do banco de dados usando o CLI do Sequelize
 npx sequelize db:create **criar o banco de dados orm_example (que nomeamos no arquivo config.json)
 
+// models
+
+➡️ Para criar um model, usamos o seguinte comando no CLI:
+npx sequelize model:generate --name NomeDoModel --attributes nomeDoAtributo:string
+(O parâmetro --name se refere ao nome da tabela, no singular, pois está relacionado a uma unidade dos dados, como uma linha no banco de dados ou um objeto no seu código JavaScript;
+O parâmetro --attributes se refere ao nome das colunas e os tipos de dados que elas contêm. Não é preciso definir todas as colunas neste comando, é possível adicioná-las direto no arquivo model.js gerado e na migration equivalente a este model.)
+
+npx sequelize model:generate --name User --attributes fullName:string
+
+
+// migration *Uma migration é uma forma de versionar o schema do banco de dados. 
+
+npx sequelize db:migrate
+npx sequelize db:migrate:undo
+
+-> Criando uma nova migration para alterar uma tabela já existente**
+Para isso, o objeto queryInterface possui funções específicas, que permitem criar uma nova coluna, remover uma coluna ou mesmo mudar o tipo de uma coluna que já existe. Nesse caso, o queryInterface abstrai o que a função ALTER TABLE faz no SQL, como já aprendemos no conteúdo sobre estrutura de banco de dados.
+npx sequelize migration:generate --name add-column-phone-table-users
 
