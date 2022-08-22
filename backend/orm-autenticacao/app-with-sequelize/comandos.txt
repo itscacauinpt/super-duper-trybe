@@ -45,3 +45,6 @@ npx sequelize db:migrate:undo
 Para isso, o objeto queryInterface possui funções específicas, que permitem criar uma nova coluna, remover uma coluna ou mesmo mudar o tipo de uma coluna que já existe. Nesse caso, o queryInterface abstrai o que a função ALTER TABLE faz no SQL, como já aprendemos no conteúdo sobre estrutura de banco de dados.
 npx sequelize migration:generate --name add-column-phone-table-users
 
+// criação de um novo seed pelo CLI:
+
+npx sequelize seed:generate --name users
