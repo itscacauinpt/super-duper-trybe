@@ -1,0 +1,29 @@
+1️⃣ Instalação do Sequelize
+npm install sequelize
+
+2️⃣ Inicialização do Sequelize
+npm install sequelize-cli *responsável por gerar e executar as operações
+
+npm install mysql2 *dependência necessária para usarmos o MySQL juntamente com o Sequelize.
+
+npx sequelize-cli init * iniciar um projeto com o Sequelize
+(Sequelize CLI [Node: 16.15.1, CLI: 6.4.1, ORM: 6.21.4]
+
+3️⃣ Conexão com o banco de dados
+Created "config/config.json"
+Successfully created models folder at "/".
+Successfully created migrations folder at "/".
+Successfully created seeders folder at "/".)
+
+ configurar o arquivo config.json, configurando o acesso da aplicação ao nosso banco de dados.
+*    "username": "root",
+    "password": "",
+    "database": "orm_example",
+    "host": "127.0.0.1",
+    "dialect": "mysql"*
+**Importante: vale lembrar que passar as credenciais dessa forma não é uma boa prática, pois nossos dados de acesso ao banco de dados ficam totalmente visíveis para qualquer pessoa que tenha acesso ao código da nossa aplicação.
+
+4️⃣ Criação do banco de dados usando o CLI do Sequelize
+npx sequelize db:create **criar o banco de dados orm_example (que nomeamos no arquivo config.json)
+
+
