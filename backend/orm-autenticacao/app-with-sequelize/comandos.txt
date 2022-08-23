@@ -48,3 +48,10 @@ npx sequelize migration:generate --name add-column-phone-table-users
 // criação de um novo seed pelo CLI:
 
 npx sequelize seed:generate --name users
+
+//
+
+npm install dotenv
+
+require('dotenv').config();
+config.json -> config.js
