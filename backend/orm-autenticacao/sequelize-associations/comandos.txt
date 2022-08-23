@@ -1,0 +1,25 @@
+npm init -y
+
+npm i express nodemon sequelize mysql2
+
+npm i sequelize-cli
+
+*comando mais configurações necessárias no arquivo config/config.json
+npx sequelize-cli init
+
+*precisamos criar o schema que conterá as nossas tabelas
+npx sequelize db:create
+
+*migration que será responsável pela tabela Employees *adiciona schema para criação da tabela
+npx sequelize migration:generate --name create-employees
+
+*migration responsável pela tabela Addresses
+npx sequelize migration:generate --name create-addresses
+
+*comando para gerar as migrations
+npx sequelize db:migrate
+
+##associações
+
+*
+
