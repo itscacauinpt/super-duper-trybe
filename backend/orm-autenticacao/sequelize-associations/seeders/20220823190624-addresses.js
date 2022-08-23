@@ -5,7 +5,7 @@ module.exports = {
    await queryInterface.bulkInsert('Addresses', [
     {
       city: 'Belo Horizonte',
-      street: 'Rua Flórida',
+      street: 'Rua Florida',
       number: 1080,
       employee_id: 1,
     },
@@ -28,21 +28,21 @@ module.exports = {
       employee_id: 4,
     },
     {
+      city: 'Belo Horizonte',
+      street: 'Rua Vicente Alvarenga',
+      number: 80,
+      employee_id: 1,
+    },
+    {
       city: 'Curitiba',
       street: 'Rua Fria',
       number: 101,
-      employee_id: 4,
+      employee_id: 5,
     },
    ], {});
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  async down (queryInterface, _Sequelize) {
     await queryInterface.bulkDelete('Addresses', null, {});
   }
 };
