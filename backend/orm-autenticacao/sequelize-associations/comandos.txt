@@ -29,4 +29,8 @@ npx sequelize seed:generate --name addresses
 *populando as tabelas, executando os seeders
 npx sequelize db:seed:all
 
+*remover as tabelas antigas, depois recriá-las e, por último, executar os seeders:
+npx sequelize db:migrate:undo:all
+npx sequelize db:migrate
+npx sequelize db:seed:all
 
