@@ -21,5 +21,12 @@ npx sequelize db:migrate
 
 ##associações
 
-*
+*Validando relacionamentos 1:1
+Agora, vamos validar o relacionamento. Para isso, precisaremos criar seeders para inserirmos dados nas tabelas e um servidor para responder as requisições.
+npx sequelize seed:generate --name employees
+npx sequelize seed:generate --name addresses
+
+*populando as tabelas, executando os seeders
+npx sequelize db:seed:all
+
 
