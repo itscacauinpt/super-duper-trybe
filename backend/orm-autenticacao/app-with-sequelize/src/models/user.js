@@ -6,6 +6,11 @@ const User = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
      // aqui inserimos o datatype da coluna criada
     phone_num: DataTypes.STRING,
+  }, {
+    // nome da tabela igual ao nome da model
+    freezeTableName: true,
+    // trocando o nome da table
+    // tableName: "Xablau",
   });
 
   return User;
