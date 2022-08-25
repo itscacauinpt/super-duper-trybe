@@ -1,11 +1,9 @@
-const { Address, Employee } = require('./models');
+const service = require('../services/employee');
+// const { Address } = require('./models');
 
 const getAll = async (_req, res) => {
   try {
-    const employees = await Employee.findAll({
-      // nice isso aqui vium
-      include: { model: Address, as: 'addresses' },
-    });
+    const employees = await service.getAll();
 
     return res.status(200).json(employees);
   } catch (e) {
@@ -19,25 +17,15 @@ const getAll = async (_req, res) => {
 const getById = async (req, res) => {
   try {
     const { id } = req.params;
-    // eager loading:
-    // const employee = await Employee.findOne({
-    //     where: { id },
-    //     
-    //     // include: [{ model: Address, as: 'addresses' }],
-    //     include: [{model: Address, as: 'addresses', attributes: { exclude: ['employeeId', 'number'] },}]
-    //   });
+    const employee = await service.getById(id);
 
-    // lazy loading:
-    const employee = await Employee.findOne({ where: { id } });
-
-    if (!employee)
+    if (!employee) {
       return res.status(404).json({ message: 'Funcionário não encontrado' });
+    }
 
     // query string includeAddresses
     if (req.query.includeAddresses === 'true') {
-      const addresses = await Address.findAll({
-        where: { employeeId: id },
-        attributes: { exclude: ['employeeId', 'number'] } });
+      const {employee, addresses} = await service.findAll();
 
       return res.status(200).json({ employee, addresses });
     }
