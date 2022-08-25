@@ -56,3 +56,7 @@ npx sequelize seed:generate --name user-books
 
 npx sequelize db:migrate
 npx sequelize db:seed:all
+
+//
+
+npm install dotenv
