@@ -1,6 +1,6 @@
 // index.js
 const express = require('express');
-const { Address, Employee } = require('./models');
+const { Address, Employee, Books, User } = require('./models');
 
 const app = express();
 
@@ -58,7 +58,7 @@ app.get('/usersbooks/:id', async (req, res) => {
     const { id } = req.params;
     const user = await User.findOne({
       where: { userId: id },
-      include: [{ model: Book, as: 'books', through: { attributes: [] } }],
+      include: [{ model: Books, as: 'books', through: { attributes: [] } }],
     });
 
     if (!user)
