@@ -34,3 +34,13 @@ npx sequelize db:migrate:undo:all
 npx sequelize db:migrate
 npx sequelize db:seed:all
 
+// eager landing
+recebemos um objeto do tipo Employee dentro do objeto do tipo Address.
+Isso acontece pois o banco faz o join das tabelas e já traz todos os dados, não só de Address, como também do Employee que vive nele.
+Com isso, é possível de imediato fazer um acesso ao primeiro nome de uma pessoa que mora em um determinado endereço por meio da sintaxe address.employee.firstName.
+
+// lazy landing
+será retornado um objeto de endereço onde existirá um campo com o id da pessoa colaboradora que mora neste endereço.
+
+
+
