@@ -42,5 +42,17 @@ Com isso, é possível de imediato fazer um acesso ao primeiro nome de uma pesso
 // lazy landing
 será retornado um objeto de endereço onde existirá um campo com o id da pessoa colaboradora que mora neste endereço.
 
+// Associação de muitos para muitos, N:N
 
+!foreignKey sempre se refere ao model em que chamamos belongsToMany, enquanto otherKey se refere ao model com o qual estamos criando a associação
 
+npx sequelize migration:generate --name create-books
+npx sequelize migration:generate --name create-users
+npx sequelize migration:generate --name create-user-books
+
+npx sequelize seed:generate --name books
+npx sequelize seed:generate --name users
+npx sequelize seed:generate --name user-books
+
+npx sequelize db:migrate
+npx sequelize db:seed:all
