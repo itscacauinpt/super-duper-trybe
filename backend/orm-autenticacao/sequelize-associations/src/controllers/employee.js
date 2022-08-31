@@ -1,5 +1,4 @@
 const service = require('../services/employee');
-// const { Address } = require('./models');
 
 const getAll = async (_req, res) => {
   try {
