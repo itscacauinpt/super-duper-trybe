@@ -1,4 +1,4 @@
-const { Books, User } = require('./models');
+const { Books, User } = require('../models');
 
 const getOne = () => {
   return User.findOne({
