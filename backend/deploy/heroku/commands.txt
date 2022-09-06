@@ -1,0 +1,27 @@
+// executando o heroku
+
+npm install # Instalando as dependências em um exemplo NodeJs utilizando o npm.
+
+heroku local web
+
+//
+
+npm init -y
+
+npm i --save express
+
+config package.json -> "start": "node index.js"
+
+const port = process.env.PORT || 3000
+
+//
+
+npm init
+
+heroku create super-duper-me *aplicação criada no heroku pelo cl
+
+git remote -v
+
+git push heroku master ou main *subindo app no dyno do heroku
+
+
