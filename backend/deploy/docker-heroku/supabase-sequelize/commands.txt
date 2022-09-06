@@ -1,0 +1,5 @@
+  mkdir supabase-with-sequelize && cd supabase-with-sequelize
+  npm init -y
+  npm install sequelize sequelize-cli express dotenv
+  npm install pg pg-hstore
+  npx sequelize-cli init
