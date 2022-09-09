@@ -1,3 +1,9 @@
+// sendo redundante :v
+
+let symbol: symbol = Symbol('qualquer-símbolo');
+
+// let big: bigint = 10n;
+
 let yes: boolean = true;
 let no: boolean = false;
 
@@ -40,5 +46,26 @@ const stringBadRequest = theATeam[400];
 console.log(ok); //saída: 200
 console.log(indiceOk); //saída: 200
 console.log(stringBadRequest); //saída: BadRequest
+
+//
+
+let arrayNumbers: Array<number> = [1, 2, 3];
+let arrayNumbers2: number[] = [1, 2, 3];
+let arrayStrings: Array<string> = ['1', '2', '3'];
+let arrayStrings2: string[] = ['1', '2', '3'];
+
+// objeto - ? chave opcional
+let umObjeto: { name: string, age: number, adult?: boolean } = {
+  name: 'Cacau',
+  age: 20,
+};
+// console.log(umObjeto.nome);
+console.log(umObjeto.name);
+
+// function aFunction(x: number, y: number): number // inferencia
+function aFunction(x: number, y: number) {
+  return 2+2;
+}
+const anotherFunc: (x: number, y: number) => number = (x, y) => x + y;
 
 
