@@ -1,0 +1,31 @@
+npm install -g typescript *globalmente
+
+npm i typescript -D
+
+tsc nomeDoArquivo.ts
+||
+npx tsc nomeDoArquivo.ts *execução local
+
+typescript no codeRunner:
+
+npm i ts-node -D
+.vscode/settings.json
+{
+  "code-runner.executorMap": {
+    //"typescript": "ts-node",
+    //"typescript": "npx ts-node --files --trans",
+    "typescript": "npx ts-node --files", (include e exclude do tsconfigjson)
+  }
+}
+npm install -D tslib @types/node
+
+npx tsc --innit
+npm i -D @tsconfig/node16
+npx tsc
+
+//
+
+npx ts-node --help
+npx tsc --help
+
+// editorconfig
