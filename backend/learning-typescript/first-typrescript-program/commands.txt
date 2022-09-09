@@ -1,0 +1,32 @@
+npm init -y
+
+npm i -D typescript
+
+npm install -D @tsconfig/node16
+
+touch tsconfig.json
+
+// ./tsconfig.json
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2016",                                 
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+
+npm install -D @types/node
+
+touch index.ts && touch exercises.ts
+
+//
+
+npx tsc
+node ./dist/index.js
