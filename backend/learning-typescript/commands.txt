@@ -1,0 +1,3 @@
+npm init -y
+npm i -D typescript tslib @types/node @tsconfig/node16
+npx tsc --init
