@@ -58,5 +58,16 @@ const aPerson = new Person('Cacau', 21, EyesColour.brown);
 console.log(aPerson);
 aPerson.speak()
 
-// interfaces
-
+// interfaces | o único trabalho de uma interface é descrever o objeto
+interface Employee {
+  firstName: string;
+  lastName: string;
+  fullName(): string;
+}
+interface Teacher extends Employee {
+  firstName: string;
+  lastName: string;
+  subject: string;
+  fullName(): string;
+  sayHello(): string;
+}
