@@ -71,3 +71,39 @@ interface Teacher extends Employee {
   fullName(): string;
   sayHello(): string;
 }
+
+// generics | definir e reutilizar, verifique e garanta
+// function createArray(items: any[]): any {
+function createArray<Type>(items: Type[]): Type[] {
+  // return new Array().concat(items);
+  return new Array<Type>().concat(items);
+}
+// let aArray = createArray([1, 2, 3, 4, 5]);
+// let anotherArray = createArray(['a', 'b', 'c']);
+let aArray = createArray<number>([1, 2, 3, 4, 5]);
+let anotherArray = createArray<string>(['a', 'b', 'c']);
+
+function aFunction<T, U> (value: T, message: U) : T {
+  console.log(message);
+  return value
+}
+let returnNumber = aFunction<number, string>(100, "Olá");
+
+class ProcessIdentity<Type, AnotherType> {
+  _value: Type;
+  _message: AnotherType;
+
+  constructor(value: Type, message: AnotherType) {
+      this._value = value;
+      this._message = message;
+  }
+
+  getIdentity() : Type {
+      console.log(this._message);
+      return this._value
+  }
+}
+
+let processor = new ProcessIdentity<number, string>(100, "Olá");
+processor.getIdentity();  // imprime "Olá" e retorna 100
+
