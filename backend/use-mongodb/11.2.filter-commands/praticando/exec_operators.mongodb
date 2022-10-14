@@ -1,0 +1,70 @@
+// https://www.mongodb.com/docs/manual/reference/operator/
+
+//Filmes que foram lançados em 1993 // $eq -> equal
+use('filmes_legaix');
+// db.filmes.find({ ano: 2000 });
+db.filmes.find({ ano: { $eq: 2000 } });
+
+// $in para executar comparações de igualdade com mais de um valor no mesmo atributo.
+use('filmes_legaix');
+db.filmes.find({ ano: { $in: [2000, 2001] } });
+
+// Filmes que foram lançados antes do ano 2000 // $lt -> less than
+use('filmes_legaix');
+db.filmes.find({ ano: { $lt: 2000 } });
+
+// Filmes que foram lançados no ano 2000 ou antes. // lte - less than or equal (menor que ou igual)
+use('filmes_legaix');
+db.filmes.find({ ano: { $lte: 2000 } });
+
+//Filmes que foram lançados nos anos posteriores a 1993 // $gt = greater than
+use('filmes_legaix');
+db.filmes.find({ ano: { $gt: 1993 } });
+
+//Filmes que foram lançados a partir de 1993 // $gte = greater than or equal
+use('filmes_legaix');
+db.filmes.find({ ano: { $gte: 1993 } });
+
+//Filmes que foram lançados de 1993 até 2000
+// gt == '>' // lt == '<' // gte == '>=' // lte == '<='
+use('filmes_legaix');
+db.filmes.find({ ano: { $gte: 1993, $lte: 2000 } });
+
+//Filmes que tem 7 avaliações boas:
+use('filmes_legaix');
+// db.filmes.find({ 'avaliacao.bom': 7 });
+db.filmes.find({ 'avaliacao.bom': { $eq: 7 } });
+
+//Filmes que não tem 7 avaliações ruins // $ne -> not equal?
+use('filmes_legaix');
+db.filmes.find({ 'avaliacao.ruim': { $ne: 7 } });
+
+//Filmes que foram lançados nos anos 
+// posteriores ao 2000 e receberam a partir de 8 avaliações boas.
+use('filmes_legaix');
+db.filmes.find({ 'avaliacao.bom': { $eq: 8 }, ano: { $gt: 200 } });
+db.filmes.find({ ano: { $gt: 200 }, 'avaliacao.bom': { $eq: 8 } });
+db.filmes.find({$and: [{'avaliacao.bom': { $gte: 8 }}, {ano: { $gt: 2000 }}]});
+
+//Filmes que foram lançados em anos posteriores a 2000 ou
+// receberam a partir de 8 avaliações boas // $or -> this or that
+use('filmes_legaix');
+db.filmes.find({
+  $or: [
+    { ano: { $gt: 2000 } },
+    { 'avaliacao.bom': { $gte: 8 } },
+  ]
+});
+
+// Filmes que não foram dirigidos pelo Michael Bay
+use('filmes_legaix');
+// db.filmes.find({ diretor: { $ne: 'Michael Bay' } });
+db.filmes.find({ diretor: { $not: { $eq: 'Michael Bay' } } });
+
+// Filmes que não foram dirigidos 
+//pelo Michael Bay e não receberam 10 avaliações ruins
+use('filmes_legaix');
+db.filmes.find({ $nor: [
+  { 'avaliacao.bom': 10 },
+  { diretor: 'Michael Bay' },
+]});
