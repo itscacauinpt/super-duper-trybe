@@ -1,0 +1,23 @@
+// pretty()
+
+// limit it to ten
+use('filmes_legaix');
+// db.filmes.find().limit(2);
+db.filmes.find().limit(2).skip(1); // skipped the first one
+
+// Ordenar filmes pelo título em ordem crescente
+use('filmes_legaix');
+db.filmes.find().sort({ titulo: 1})
+
+// Ordenar filmes pelo título em ordem decrescente
+use('filmes_legaix');
+db.filmes.find().sort({ titulo: -1})
+
+//Remove o PRIMEIRO documento que tiver o título igual a Os Oito Odiados
+use('filmes_legaix');
+db.filmes.deleteOne({ titulo: 'Os Oito Odiados'})
+
+//Remove TODOS os documentos com mais que 6 avaliações ruins
+use('filmes_legaix');
+db.filmes.deleteMany({'avaliacao.ruim': { $gt: 6}})
+

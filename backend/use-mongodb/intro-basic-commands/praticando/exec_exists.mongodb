@@ -1,0 +1,19 @@
+//
+use('filmes_legaix');
+db.records.insertMany([{ primeiro: 'yes', segundo: 'yes too' }, { primeiro: 'yes', segundo: 'yep' }, { primeiro: 'yes' }]);
+
+// Todos os registros que contenham o primeiro campo
+// Todos os registros que não contenham o segundo campo
+use('filmes_legaix');
+db.records.find({ primeiro: {$exists: true} });
+
+use('filmes_legaix');
+db.records.find({ segundo: {$exists: true} });
+db.records.find({ segundo: {$exists: true} }).count();
+db.records.find({ segundo: {$exists: false} });
+db.records.find({ segundo: {$exists: false} }).count();
+
+//
+
+use('filmes_legaix');
+db.records.find();
