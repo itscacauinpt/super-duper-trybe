@@ -1,0 +1,11 @@
+docker run -it --rm python:tag
+docker run -it --rm --name nome-do-seu-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3 python seu-arquivo.py
+# -v "$PWD":/usr/src/myapp - monta o diretório atual para dentro do contêiner
+# -w /usr/src/myapp - muda o WORKDIR para executar o comando no diretório recém montado.
+
+~
+
+docker run -it --name trybe_python python
+docker start
+docker exec -it trybe_python bash
+pyhton3
