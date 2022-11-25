@@ -6,6 +6,6 @@ docker run -it --rm --name nome-do-seu-script -v "$PWD":/usr/src/myapp -w /usr/s
 ~
 
 docker run -it --name trybe_python python
-docker start
+docker start trybe_python
 docker exec -it trybe_python bash
 pyhton3
