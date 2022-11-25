@@ -1,6 +1,0 @@
-show dbs;
-use('filmes_legaix');
-db.filmes.find();
-db.filmes.countDocuments({});
-
-

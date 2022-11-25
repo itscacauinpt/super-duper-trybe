@@ -1,0 +1,28 @@
+// produtos que contenham o item lemon
+use('uns_itens_legaix');
+db.itens.find({ tags: 'lemon' });
+
+// produtos que contenham os items lemon e orange
+db.itens.find({ $and: [ { tags: 'lemon' }, { tags: 'orange' } ] });
+// $all -> Utiliza-se $all sempre que é preciso passar mais de um valor de comparação
+db.itens.find({ tags: { $all: [ 'lemon', 'orange' ] } });
+
+// produtos que contenham os items lemon e orange e grapefruit
+db.itens.find({ tags: { $all: [ 'lemon', 'orange', 'grapefruit' ] } });
+
+// produtos que contenham os items lemon e orange e grapefruit e banana
+db.itens.find({ tags: { $all: [ 'lemon', 'orange', 'grapefruit', 'banana' ] } }).count();
+
+// produtos com algum item com pelo menos uma quantidade entre 70 e 100 unidades// $elemMatch
+// db.itens.find({ quantidade: { $elemMatch: { $gte: 70, $lte: 100 } }});
+
+// todos os itens do array, ih mano sei la
+// db.itens.find({ quantidade: { $all: [ { $elemMatch: { $gte: 70, $lte: 100 } } ] } });
+db.itens.find({ quantidade: { $all: [ { $elemMatch: { $gte: 70, $lte: 100 } } ] } });
+
+
+// numero de produtos com algum item com quantidade acima de 1
+// db.itens.find({ quantidade: { $elemMatch: { $gt: 90 } } });
+
+
+

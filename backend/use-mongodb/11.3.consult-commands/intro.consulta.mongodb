@@ -1,0 +1,6 @@
+// https://www.mongodb.com/docs/manual/reference/operator/query/
+
+show dbs;
+
+use('uns_itens_legaix');
+db.itens.find();
