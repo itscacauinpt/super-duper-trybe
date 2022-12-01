@@ -41,6 +41,4 @@ enumerate_lyrics = list(enumerate(lyrics))
 # print(enumerate_lyrics)
 
 for index, word in enumerate(lyrics):
-    # print(f'{index} - {word}')
-    print('{} - {}'.format(index, word))
-
+    print(f'{index} - {word}')
