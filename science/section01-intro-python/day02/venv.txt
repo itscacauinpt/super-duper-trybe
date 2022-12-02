@@ -1,0 +1,6 @@
+which python3
+/home/cacau/.pyenv/shims/python3
+
+python3 -m venv .venvex
+source .venv/bin/activate
+
