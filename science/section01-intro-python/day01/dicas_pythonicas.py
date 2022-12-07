@@ -9,7 +9,7 @@ random_list_2 = random.sample(range(60), random.randint(50, 55))
 
 list_num = []
 for x in range(10):
-  list_num.append(random.randint(0, 50))
+    list_num.append(random.randint(0, 50))
 
 # print(list_num)
 counter = Counter(list_num)
@@ -39,8 +39,9 @@ numeros_2 = [0, 5, 6, 7]
 # print(all(nomes_1)) print(all(numeros_1)) print(any(numeros_1)) # True
 # print(all(nomes_2)) # False
 
+
 def indice():
-  for inde, ele in enumerate(nomes_1):
-    print(ele, inde)
+    for inde, ele in enumerate(nomes_1):
+        print(ele, inde)
 
 # print(indice())

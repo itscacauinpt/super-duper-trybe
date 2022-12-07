@@ -14,8 +14,8 @@ for restaurant in restaurants:
 # list comprehension
 min_rating = 3.0
 filtered_restaurants = [restaurant
-                         for restaurant in restaurants
-                         if restaurant["nota"] > min_rating]
+                            for restaurant in restaurants
+                            if restaurant["nota"] > min_rating]
 # print(filtered_restaurants)  # imprime a lista de restaurantes, sem o B e D
 
 # S = [2 * x for x in range(101) if x ** 2 > 3]
