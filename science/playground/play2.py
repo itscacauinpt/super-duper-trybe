@@ -10,15 +10,12 @@ while last < n:
 num = 5
 factorial, counter = 1, 1
 while counter <= num:
-  factorial *= counter
-  counter += 1
+    factorial *= counter
+    counter += 1
 # print(factorial)
 
 # range
 ratings = [6, 8, 5, 9, 10]
 # ratings_result = [num*10 for num in ratings]
-ratings_result = [num*10 for num in ratings if num%3 == 0]
+ratings_result = [num*10 for num in ratings if num % 3 == 0]
 # print(ratings_result)
-
-
-
