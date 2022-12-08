@@ -9,3 +9,8 @@ docker run -it --name trybe_python python
 docker start trybe_python
 docker exec -it trybe_python bash
 pyhton3
+
+~
+
+criar ambiente virtual
+python3 -m venv .venv && source .venv/bin/activate
