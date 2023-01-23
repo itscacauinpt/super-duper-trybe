@@ -1,0 +1,5 @@
+g++ -std=c++11 -O2 -Wall test.cpp -o test
+-this command returns a binary file, from the source code test.cpp
+-the compiler follows c++11 standard, optimizes -O2 and shows the warnings about the possible errors -Wall
+
+g++ -std=c++11 example.cpp -o example_program
