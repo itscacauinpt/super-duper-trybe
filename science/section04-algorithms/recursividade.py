@@ -146,3 +146,27 @@ def mdc(a, b):
 
 
 # print(mdc(3, 6))
+
+
+def recursive_find_min_num(numbers, indexes, min_num):
+    if indexes == 0:
+        return min_num
+
+    elif numbers[indexes - 1] <= min_num:
+        min_num = numbers[indexes - 1]
+        return recursive_find_min_num(numbers, indexes - 1, min_num)
+
+    else:
+        return recursive_find_min_num(numbers, indexes - 1, min_num)
+
+
+def find_min_num(numbers):
+    indexes = len(numbers) - 1
+    min_num = numbers[indexes]
+
+    return recursive_find_min_num(numbers, indexes, min_num)
+
+
+numbers = [7, 5, 1, 9, 2, 6, 8, 1.5]
+# min_num = find_min_num(numbers)
+# print(min_num)
