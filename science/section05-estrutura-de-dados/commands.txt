@@ -1,0 +1,20 @@
+docker run -it --rm python:tag
+docker run -it --rm --name nome-do-seu-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3 python seu-arquivo.py
+# -v "$PWD":/usr/src/myapp - monta o diretório atual para dentro do contêiner
+# -w /usr/src/myapp - muda o WORKDIR para executar o comando no diretório recém montado.
+
+~
+
+docker run -it --name trybe_python python
+docker start trybe_python
+docker exec -it trybe_python bash
+pyhton3
+
+~
+
+criar ambiente virtual
+python3 -m venv .venv && source .venv/bin/activate
+
+python3 -m pip install numpy
+Bibliotecas como o pandas para análise de dados, ou scikit-learn para
+aprendizado de máquina utilizam o numpy por baixo dos panos
