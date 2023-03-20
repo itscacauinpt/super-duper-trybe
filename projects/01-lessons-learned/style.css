@@ -1,0 +1,123 @@
+body {
+  background-color: rgb(253, 251, 251);
+  margin: 0;
+  line-height: 1.6em;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+}
+
+nav {
+  margin-bottom: 10px;
+
+}
+
+.nav_link {
+  font-family: Poppins, sans-serif;
+  margin: 10px;
+}
+
+a {
+  font-family: Poppins, sans-serif;
+  text-decoration: none;
+  color: rgb(203, 86, 207);
+  letter-spacing: 5px;
+
+}
+
+a:hover {
+  color: brown;
+}
+
+
+#cabecalho {
+  background-color: rgb(255, 221, 243);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#titulo {
+  font-family: Poppins, sans-serif;
+  font-weight: 100;
+}
+
+.subtitulo {
+  font-size: 1em;
+  font-family: Poppins, sans-serif;
+}
+
+.licoes {
+  margin: 10% 10% 5%;
+}
+
+#minha_foto {
+  width: 300px;
+  margin: 5px 25px;
+  display: inline-block;
+  border: 5px solid rgb(255, 221, 243);
+  border-radius: 50%;
+}
+
+#licoes_aprendidas {
+  display: inline-block;
+  padding: 10px 50px;
+  margin: 5px 25px;
+  border-radius: 15%;
+  background-color: rgb(255, 221, 243);
+}
+
+#licoes_a_aprender {
+  display: inline-block;
+  padding: 10px 50px;
+  margin: 5px 25px;
+  border-radius: 15%;
+  background-color: rgb(255, 221, 243);
+}
+
+#pdi {
+  margin-inline: 25%;
+  display: inline-block;
+}
+
+table , th , td {
+  border: 2px solid rgb(238, 149, 149);
+  font-family: monospace;
+  font-size: large;
+  text-align: center;
+  padding: 5px;
+}
+
+.lado-esquerdo {
+  display: inline-block;
+  margin: 1% 1% 1% 15%;
+}
+
+#meu_aprendizado {
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(255, 221, 243);
+  text-align: center;
+  border-radius: 15%;
+}
+
+.lado-direito {
+  display: inline-block;
+  margin: 1% 10% 1% 5%;
+}
+
+#passagem {
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(255, 221, 243);
+  text-align: center;
+  border-radius: 15%;
+  max-width: 300px;
+}
+
+#rodape {
+  background-color: rgb(255, 221, 243);
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+}
